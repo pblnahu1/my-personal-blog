@@ -291,7 +291,8 @@
 #sct-welcome {
   display: flex;
   height: 80vh;
-  background-color: #0d0e1b;
+  /* background-color: #0d0e1b; */
+  background: -webkit-linear-gradient(90deg, #76009b,#0076ca,#3aa4ad);/* Chrome 10-25, Safari 5.1-6 */                          background: linear-gradient(90deg, #76009b,#0076ca,#3aa4ad);/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */                                             
 }
 
 #sct-welcome .container {
@@ -303,7 +304,12 @@
 }
 
 #sct-welcome .item-dev {
-  width: 200%;
+  /* width: 200%; */
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #sct-welcome .item-dev>img {
@@ -331,7 +337,7 @@
 }
 
 .boton-icon:hover {
-  box-shadow: 0 0 3vmax #5233ff;
+  box-shadow: 0 0 3vmax #ffffff;
 }
 
 .boton-icon:hover .icon {
