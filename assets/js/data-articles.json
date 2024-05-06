@@ -1,0 +1,76 @@
+{
+  "articulos": [
+    {
+      "id": 1,
+      "titulo": "Next.JS vs React.JS: ¿Cuáles son sus diferencias?",
+      "autor": "freeCodeCamp",
+      "fecha_publicacion": "2024",
+      "categoria": "Desarrollo Web",
+      "imagen": "assets/img/img-articles/img-article-1.png",
+      "url": "https://www.freecodecamp.org/news/whats-the-difference-between-react-and-nextjs/"
+    },
+    {
+      "id": 2,
+      "titulo": "¿Qué es el renderizado de listas en React?",
+      "autor": "MiduDev",
+      "fecha_publicacion": "2024",
+      "categoria": "Desarrollo Web",
+      "imagen": "assets/img/img-articles/img-article-2.png",
+      "url": "https://www.reactjs.wiki/que-es-el-renderizado-de-listas-en-react"
+    },
+    {
+      "id": 3,
+      "titulo": "¡Generador de SVG GRATIS para tu proyecto!",
+      "autor": "FFFUEL",
+      "fecha_publicacion": "2024",
+      "categoria": "Diseño",
+      "imagen": "assets/img/img-articles/img-article-3.png",
+      "url": "https://fffuel.co/"
+    },
+    {
+      "id": 4,
+      "titulo": "JavaScript vs TypeScript",
+      "autor": "Dev.to",
+      "fecha_publicacion": "2024",
+      "categoria": "Desarrollo Web",
+      "imagen": "assets/img/img-articles/img-article-4.png",
+      "url": "https://dev.to/hiro9108/javascript-vs-typescript-why-we-should-learn-typescript-4d5o?ref=dailydev"
+    },
+    {
+      "id": 5,
+      "titulo": "¿Cómo hacer un Fetching de Datos con JavaScript?",
+      "autor": "Pablo Torrez",
+      "fecha_publicacion": "2024",
+      "categoria": "Desarrollo Web",
+      "imagen": "assets/img/img-articles/img-article-5.png",
+      "url": "https://github.com/pblnahu1/fetching-data-api"
+    },
+    {
+      "id": 6,
+      "titulo": "¿Cuánto cuesta una página web en Argentina 2024?",
+      "autor": "Martin Marco",
+      "fecha_publicacion": "2024",
+      "categoria": "Ventas de Sitios Web",
+      "imagen": "assets/img/img-articles/img-article-6.png",
+      "url": "https://www.martinmarco.com.ar/cuanto-cuesta-una-pagina-web/"
+    },
+    {
+      "id": 7,
+      "titulo": "Envía Formularios con FormSubmit (para Emails)",
+      "autor": "FormSubmit Docs",
+      "fecha_publicacion": "2024",
+      "categoria": "Desarrollo Web",
+      "imagen": "assets/img/img-articles/img-article-7.png",
+      "url": "https://formsubmit.co/"
+    },
+    {
+      "id": 8,
+      "titulo": "¡Mejorá tu UI con este generador de paletas de colores!",
+      "autor": "Coolors.co",
+      "fecha_publicacion": "2024",
+      "categoria": "Desarrollo Web",
+      "imagen": "assets/img/img-articles/img-article-8.png",
+      "url": "https://coolors.co/"
+    }
+  ]
+}

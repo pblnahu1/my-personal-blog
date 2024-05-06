@@ -1,0 +1,10 @@
+@media screen and (max-width: 455px) {
+
+    .search, .nav-bar {
+        display: none;
+    }
+
+    main {
+        display: block;
+    }
+}
