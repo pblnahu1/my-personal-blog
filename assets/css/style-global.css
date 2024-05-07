@@ -67,3 +67,8 @@ button {
 .info-webpage {
   margin: 50px 0px;
 }
+
+.dark-mode {
+  background-color: #000;
+  color: #fff;
+}

@@ -23,8 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
               <span class="size-info-art fecha-publicacion">${articulo.fecha_publicacion}</span>
               <span class="size-info-art autor">Autor: ${articulo.autor}</span>
             </div>
-            <h3 class="title-desc">${articulo.titulo}</h3>
+            <div class="title-article">
+              <h3 class="title-desc">${articulo.titulo}</h3>
+            </div>
             <div class="c-img-art">
+              
               <img src="${articulo.imagen}" alt="${articulo.titulo}">
             </div>
           </div>
@@ -35,6 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </a>
             <button class="btn-fav btn-link" id="btn-fav-item-${articulo.id}">
               <i class="fa-solid fa-bookmark"></i>
+            </button>
+            <button class="btn-share btn-link" id="btn-share-item-${articulo.id}">
+              <i class="fa-solid fa-share"></i>
             </button>
           </div>
         `;

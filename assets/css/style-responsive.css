@@ -4,7 +4,52 @@
         display: none;
     }
 
+    .menu-bars {
+        display: block;
+        place-content: center;
+    }
+
+    .menu-bars > i{
+        font-size: 30px;
+    }
+
     main {
         display: block;
+    }
+
+    .items {
+        box-shadow: none;
+        width: 83%;
+    }
+
+    #sct-welcome {
+        height: 125vh;
+    }
+
+    #sct-welcome .container {
+        flex-direction: column-reverse;
+    }
+
+    #sct-welcome .item-dev {
+        min-height: 0;
+        width: 145%;
+        gap: 23px;
+        text-align: justify;
+    }
+
+    .link-socials{
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .links-icons-footer {
+        flex-wrap: wrap;
+        gap: 69px;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .footer-bottom{ 
+        text-align: center;
     }
 }
