@@ -23,7 +23,7 @@
     }
 
     #sct-welcome {
-        height: 125vh;
+        height: 150vh;
     }
 
     #sct-welcome .container {
@@ -31,9 +31,7 @@
     }
 
     #sct-welcome .item-dev {
-        min-height: 0;
-        width: 145%;
-        gap: 23px;
+        gap: 20px;
         text-align: justify;
     }
 

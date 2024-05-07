@@ -330,8 +330,7 @@
 }
 
 #sct-welcome .item-dev {
-  /* width: 200%; */
-  min-height: 100%;
+  gap: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
