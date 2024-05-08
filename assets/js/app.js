@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loadingElements = () => {
     const d = document;
     
+    let main = d.getElementById("main");
     let contenedorArticulos = d.getElementById("contenedor-articulos");
 
     fetch('assets/js/data-articles.json')
@@ -19,31 +20,79 @@ document.addEventListener("DOMContentLoaded", () => {
 
           element_items.innerHTML = `
             <div class="c-it-img-info">
-              <div class="info-art">
-                <span class="size-info-art fecha-publicacion">${articulo.fecha_publicacion}</span>
-                <span class="size-info-art autor">Autor: ${articulo.autor}</span>
-              </div>
               <div class="title-article">
                 <h3 class="title-desc">${articulo.titulo}</h3>
+              </div>
+              <div class="info-art">
+                <div class="content-hash">
+                  <span class="size-info-art hashtag">#Desarrollo Web</span>
+                  <span class="size-info-art hashtag">#Frameworks</span>
+                  <span class="size-info-art hashtag">+1 tags</span>
+                </div>
+                <div class="art-span">
+                  <span class="size-info-art fecha-publicacion">${articulo.fecha_publicacion}</span>
+                  <span style="margin: 0px 5px;">•</span>
+                  <span class="size-info-art autor">${articulo.autor}</span>
+                </div>
               </div>
               <div class="c-img-art">
                 <img src="${articulo.imagen}" alt="${articulo.titulo}">
               </div>
             </div>
             <div class="c-it-btn-more">
-              <a href="${articulo.url}" target="_blank" class="btn-more btn-link" id="btn-more-link-item-${articulo.id}">
-                Link
+              <button class="btn-likes btn-link" id="btn-likes-item-${articulo.id}" title="Me encanta">
+                <i class="fa-solid fa-heart"></i>
+                <div id="number-likes">12</div>
+              </button>
+              <button class="btn-comments btn-link" id="btn-comments-item-${articulo.id}" title="Comentar">
+                <i class="fa-solid fa-comment-dots"></i>
+              </button>
+              <a href="${articulo.url}" target="_blank" class="btn-more btn-link" id="btn-more-link-item-${articulo.id}" title="Link">
                 <i class="fa-solid fa-link"></i>
               </a>
-              <button class="btn-fav btn-link" id="btn-fav-item-${articulo.id}">
+              <!--<button class="btn-bookmark btn-link" id="btn-bookmark-item-${articulo.id}">
                 <i class="fa-solid fa-bookmark"></i>
-              </button>
-              <button class="btn-share btn-link" id="btn-share-item-${articulo.id}">
-                <i class="fa-solid fa-share"></i>
-              </button>
+              </button>-->
             </div>
           `;
           contenedorArticulos.appendChild(element_items);
+
+          // ventana emergente para cada Artículo con más información detallada.
+          let btnAbrirModal = d.getElementById(`i-${articulo.id}`);
+          
+          let modal = d.createElement("div");
+          modal.classList.add("modal");
+          modal.id = `mi-modal-item-${articulo.id}`;
+          main.appendChild(modal);
+          
+          btnAbrirModal.onclick = function (e) {
+            e.stopPropagation();
+            modal.style.display = "block";
+          }
+
+          let modal_contenido = d.createElement("div");
+          modal_contenido.classList.add("modal-contenido");
+          modal.appendChild(modal_contenido);
+
+          let spanCerrar = d.createElement("span");
+          spanCerrar.classList.add("cerrar");
+          spanCerrar.innerHTML = "&times;";
+          modal_contenido.appendChild(spanCerrar);
+          
+          spanCerrar.onclick = function (e) {
+            e.stopPropagation();
+            modal.style.display = "none";
+          }
+
+          let parrafo = d.createElement("p");
+          parrafo.innerText = "Hola, esta es una ventana emergente";
+          modal_contenido.appendChild(parrafo);
+
+          window.onclick = function (e) {
+            if (e.target === modal) {
+              modal.style.display = "none";
+            }
+          };
         });
 
         // este es el código para el evento de búsqueda!

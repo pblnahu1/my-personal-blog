@@ -25,17 +25,55 @@
 
   <header class="position_header_navigation">
     <div id="header-container" class="header-container">
-      <a href="#" target="" class="link-logo"><img src="assets/img/logo-panel.png" alt="logo"></a>
+      <!-- <a href="#" target="" class="link-logo">
+        <img src="assets/img/logo-panel.png" alt="logo">
+      </a> -->
+      <div class="red-socials-header">
+        <li>
+          <a href="https://www.github.com/pblnahu1" class="a-link-red-socials a-github" title="Perfil de Github" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/pablo-nahuel-torrez-33a80324b/" class="a-link-red-socials a-linkedin" title="Perfil de LinkedIn" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:pablotorrez90@outlook.com" class="a-link-red-socials a-email" title="Correo Electrónico" target="_blank">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </li>
+      </div>
+
       <div class="search">
         <input class="input-search" id="id-input-search" placeholder="Buscar..." type="text">
-        <button type="submit"><i class="fa-solid fa-search"></i></button>
+        <button type="submit">
+          <i class="fa-solid fa-search"></i>
+        </button>
       </div>
       <nav id="nav-bar" class="nav-bar">
         <ul id="list-nav-link">
-          <li><a href="#" target="" class="nav-links link-inicio"><i class="fa-solid fa-house"></i></a></li>
-          <li><a href="#" target="" class="nav-links link-guardados"><i class="fa-solid fa-bookmark"></i></a></li>
-          <li><a href="#sct-welcome" target="" class="nav-links link-dev-contact">Sobre el Dev 🤖</a></li>
-          <li><a href="#" class="nav-links darkmode"><i class="fa-solid fa-circle-half-stroke"></i></a></li>
+          <li>
+            <a href="#" target="" class="nav-links link-inicio" title="Página de Inicio">
+              <i class="fa-solid fa-house"></i>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="#" target="" class="nav-links link-guardados">
+              <i class="fa-solid fa-bookmark"></i>
+            </a>
+          </li> -->
+          <li>
+            <a href="#sct-welcome" target="" class="nav-links link-dev-contact" title="Sobre el Dev">
+              Sobre el Dev 🤖
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-links darkmode" title="Cambiar Tema">
+              <i class="fa-solid fa-circle-half-stroke"></i>
+            </a>
+          </li>
         </ul>
       </nav>
       <a href="#" class="nav-links menu-bars">
@@ -86,7 +124,9 @@
 
 
 
-  <main>
+  <main id="main">
+    <!-- Acá van a ir las ventanas emergentes para cada Artículo -->
+    
     <div class="info-webpage">
       <h1>Colección de mis artículos preferidos</h1>
       <p>Cada artículo tiene su enlace</p>
@@ -130,11 +170,28 @@
     <section id="sct-welcome">
       <div class="container">
         <div class="item-dev">
-          <h2 class="div-text-welcome">Hola! Soy Pablo Torrez, Desarrollador Web y estudiante de Análisis de Sistemas.</h2>
-          <p class="div-text-welcome">Poseo una trayectoria de más de dos años como desarrollador web, y me encuentro inmerso en la tecnicatura de análisis desistemas en el Instituto Tecnológico Beltrán (Instituto Superiorde Formación Técnica N°197), con el objetivo de formalizar mi carrera y continuar avanzando en mi desarrollo profesional. </p>
-          <p class="div-text-welcome">Me caracterizo por mi disciplina y mi entusiasmo por asumirnuevos desafíos, siempre buscando oportunidades paraintegrarme en proyectos interesantes. Tengo la capacidad deadaptarme ágilmente a las demandas cambiantes del sector,desaprendiendo y reaprendiendo según sea necesario.</p>
+          <h2 class="div-text-welcome">
+            Hola! Soy Pablo Torrez, Desarrollador Web y estudiante de Análisis de Sistemas.
+          </h2>
+          <div class="div-text-welcome">
+            <p>
+              Tengo más de dos años de experiencia como creador de páginas web y actualmente estoy estudiando análisis
+              de
+              sistemas en el Instituto Tecnológico Beltrán para seguir creciendo profesionalmente.
+            </p>
+            <p>
+              Soy conocido por mi dedicación y mi interés en enfrentar nuevos desafíos. Siempre estoy buscando
+              oportunidades
+              emocionantes para unirme a proyectos interesantes. Puedo adaptarme rápidamente a los cambios en mi campo,
+              aprendiendo y desaprendiendo según sea necesario.
+            </p>
+          </div>
           <div class="div-btn">
-            <a href="#" class="link-publicaciones"><button class="btn btn-dark px-5 py-2 btn-lg boton-icon">Mi Portfolio<i class="fas fa-chevron-right icon"></i></button>
+            <a href="#" class="link-publicaciones">
+              <button class="btn btn-dark px-5 py-2 btn-lg boton-icon">
+                Mi Portfolio
+                <i class="fas fa-chevron-right icon"></i>
+              </button>
             </a>
           </div>
         </div>
@@ -150,32 +207,62 @@
 
   <footer>
     <div class="footer-wrapper">
-      <div class="footer-columns">  
+      <div class="footer-columns">
         <div class="link-columns">
           <div>
             <section>
               <h3>+ Artículos</h3>
               <ul>
-                <li><a href="#" title="Practicas Programación">Buenas prácticas programación</a></li>
-                <li><a href="#" title="La IA">IA: Inteligencia Artificial</a></li>
-                <li><a href="#" title="IoT: Internet de las cosas">IoT: Internet de las Cosas</a></li>
-                <li><a href="#" title="Electron: Desktop Application">Electron: Desktop Application</a></li>
-                <li><a href="#" title="Responsive Design">Mejora en Responsive Design</a></li>
+                <li>
+                  <a href="#" title="Practicas Programación">Buenas prácticas programación</a>
+                </li>
+                <li>
+                  <a href="#" title="La IA">IA: Inteligencia Artificial</a>
+                </li>
+                <li>
+                  <a href="#" title="IoT: Internet de las cosas">IoT: Internet de las Cosas</a>
+                </li>
+                <li>
+                  <a href="#" title="Electron: Desktop Application">Electron: Desktop Application</a>
+                </li>
+                <li>
+                  <a href="#" title="Responsive Design">Mejora en Responsive Design</a>
+                </li>
               </ul>
             </section>
             <section>
               <h3>For Developers</h3>
               <ul>
-                <li><a href="#" title="Documentation">Documentación</a></li>
-                <li><a href="#" title="Extensions VSCode">Extensiones Visual Studio Code</a></li>
-                <li><a href="#" title="Frameworks Frontend">Frameworks Frontend</a></li>
-                <li><a href="#" title="Frameworks Backend">Frameworks Backend</a></li>
-                <li><a href="#" title="Metodologías">Metodologías</a></li>
-                <li><a href="#" title="Bases de Datos relacionales">Bases de Datos relacionales</a></li>
-                <li><a href="#" title="Bases de Datos no relacionales">Bases de Datos no relacionales</a></li>
-                <li><a href="#" title="LocalStorage">LocalStorage</a></li>
-                <li><a href="#" title="Cookies">Cookies</a></li>
-                <li><a href="#" title="API">APIs</a></li>
+                <li>
+                  <a href="#" title="Documentation">Documentación</a>
+                </li>
+                <li>
+                  <a href="#" title="Extensions VSCode">Extensiones Visual Studio Code</a>
+                </li>
+                <li>
+                  <a href="#" title="Frameworks Frontend">Frameworks Frontend</a>
+                </li>
+                <li>
+                  <a href="#" title="Frameworks Backend">Frameworks Backend</a>
+                </li>
+                <li>
+                  <a href="#" title="Metodologías">Metodologías</a>
+                </li>
+                <li>
+                  <a href="#" title="Bases de Datos relacionales">Bases de Datos relacionales</a>
+                </li>
+                <li>
+                  <a href="#" title="Bases de Datos no relacionales">Bases de Datos no relacionales</a>
+                </li>
+                <li>
+                  <a href="#" title="LocalStorage">LocalStorage</a>
+                </li>
+                <li>
+                  <a href="#" title="Cookies">Cookies</a>
+                </li>
+                <li>
+                  <a href="#" title="API">APIs</a>
+                </li>
               </ul>
             </section>
           </div>
@@ -183,18 +270,35 @@
             <section>
               <h3>+ Repositorios</h3>
               <ul>
-                <li><a href="https://github.com/freeCodeCamp/freeCodeCamp" title="freeCodeCamp">Cursos FreeCodeCamp</a></li>
-                <li><a href="https://github.com/fforres/preguntas-y-respuestas-entrevistas-frontend" title="Entrevistas Frontend">Entrevistas Frontend</a></li>
-                <li><a href="https://github.com/goncy/interview-challenges" title="Entrevistas Frontend">Interview Challenges</a></li>
-                <li><a href="https://github.com/mouredev/roadmap-retos-programacion" title="Retos Programación">Retos Programación</a></li>
+                <li>
+                  <a href="https://github.com/freeCodeCamp/freeCodeCamp" title="freeCodeCamp">Cursos FreeCodeCamp</a>
+                </li>
+                <li>
+                  <a href="https://github.com/fforres/preguntas-y-respuestas-entrevistas-frontend"
+                    title="Entrevistas Frontend">Entrevistas Frontend</a>
+                </li>
+                <li>
+                  <a href="https://github.com/goncy/interview-challenges" title="Entrevistas Frontend">Interview
+                    Challenges</a>
+                </li>
+                <li>
+                  <a href="https://github.com/mouredev/roadmap-retos-programacion" title="Retos Programación">Retos
+                    Programación</a>
+                </li>
               </ul>
             </section>
             <section>
               <h3>TZ Web Design</h3>
               <ul>
-                <li><a href="#" title="Ayuda">Ayuda</a></li>
-                <li><a href="#" title="Términos y Condiciones">Términos y Condiciones</a></li>
-                <li><a href="#" title="Política de Privacidad">Política de Privacidad</a></li>
+                <li>
+                  <a href="#" title="Ayuda">Ayuda</a>
+                </li>
+                <li>
+                  <a href="#" title="Términos y Condiciones">Términos y Condiciones</a>
+                </li>
+                <li>
+                  <a href="#" title="Política de Privacidad">Política de Privacidad</a>
+                </li>
               </ul>
             </section>
           </div>
@@ -203,15 +307,35 @@
 
       <div class="link-socials">
         <div class="links-icons-footer">
-          <li><a href="#" class="a-link-red-socials a-linkedin" title="" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/pablo-nahuel-torrez-33a80324b/" class="a-link-red-socials a-linkedin" title="Perfil de LinkedIn" target="_blank">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </li>
 
-          <li><a href="#" class="a-link-red-socials a-github" title="" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+          <li>
+            <a href="https://www.github.com/pblnahu1/" class="a-link-red-socials a-github" title="Perfil de Github" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </li>
 
-          <li><a href="#" class="a-link-red-socials a-instagram" title="" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+          <li>
+            <a href="http://www.instagram.com/_pablotorrez1_/" class="a-link-red-socials a-instagram" title="Cuenta de Instagram" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
 
-          <li><a href="#" class="a-link-red-socials a-discord" title="" target="_blank"><i class="fa-brands fa-discord"></i></a></li>
+          <li>
+            <a href="#" class="a-link-red-socials a-discord" title="Servidor de Discord" target="_blank">
+              <i class="fa-brands fa-discord"></i>
+            </a>
+          </li>
 
-          <li><a href="#" class="a-link-red-socials a-email" title="" target="_blank"><i class="fa-solid fa-envelope"></i></a></li>
+          <li>
+            <a href="mailto:pablotorrez90@outlook.com" class="a-link-red-socials a-email" title="Correo Electrónico" target="_blank">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </li>
         </div>
       </div>
     </div>
