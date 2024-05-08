@@ -252,11 +252,14 @@ d.addEventListener("DOMContentLoaded", () => {
 
         const btnLikesCount = d.querySelectorAll(".btn-likes");
         btnLikesCount.forEach(btn => {
-          btn.addEventListener("click", () => {
-            const like_contador = btn.querySelector("#number-likes");
-            let like = parseInt(like_contador.textContent);
-            like++;
-            like_contador.textContent = like.toString();
+          btn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            if (event.target.classList.contains("fa-heart")) {
+              const like_contador = event.target.nextElementSibling;
+              let like = parseInt(like_contador.textContent);
+              like++;
+              like_contador.textContent = like.toString();
+            }
           });
         });
       })
