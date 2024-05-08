@@ -107,7 +107,7 @@ d.addEventListener("DOMContentLoaded", () => {
 
           let like_contador = d.createElement("div");
           like_contador.id = "number-likes";
-          like_contador.textContent = "12"; // ponele q hay 12 me gustas, es a modo de ejemplo
+          like_contador.textContent = "0"; // ponele q hay 12 me gustas, es a modo de ejemplo
 
           like_button.appendChild(like_icon);
           like_button.appendChild(like_contador);
@@ -158,9 +158,42 @@ d.addEventListener("DOMContentLoaded", () => {
           modal.id = `mi-modal-item-${articulo.id}`;
           main.appendChild(modal);
           
+          const btn_likes = d.querySelectorAll(".btn-likes");
+          btn_likes.forEach(btn => {
+            btn.addEventListener("click", () => {
+              modal.style.display = "none";
+            });
+          });
+
+          const btn_comments = d.querySelectorAll(".btn-comments");
+          btn_comments.forEach(btn => {
+            btn.addEventListener("click", () => {
+              modal.style.display = "none";
+            });
+          });
+
           btnAbrirModal.onclick = function (e) {
-            e.stopPropagation();
-            modal.style.display = "block";
+            if (e.target.id === btnAbrirModal.id ||
+              e.target.id === `btn-comments-item-${articulo.id}` ||
+              e.target.closest(".items") &&
+              !e.target.classList.contains("btn-likes") ||
+              !e.target.classList.contains("btn-link")
+            ) {
+              btn_likes.forEach(btn => {
+                btn.click();
+              })
+              btn_comments.forEach(btn => {
+                btn.click();
+              })
+              d.querySelectorAll(".modal").forEach(modal => {
+                modal.style.display = "none";
+              });
+              modal.style.display = "block";
+            } else {
+              if (e.currentTarget === e.target && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A') {
+                modal.style.display = "block";
+              }
+            }
           }
 
           let modal_contenido = d.createElement("div");
@@ -187,6 +220,8 @@ d.addEventListener("DOMContentLoaded", () => {
             }
           };
         });
+        /** fin de este codigo */
+
 
         // este es el código para el evento de búsqueda!
         const buscarInput = d.getElementById("id-input-search");
@@ -196,9 +231,9 @@ d.addEventListener("DOMContentLoaded", () => {
           items.forEach(item => {
             const titulo = item.querySelector(".title-desc").textContent.trim().toLowerCase();
             if (titulo.includes(searchText)) {
-              item.style.display = "block"; // mostrar el elemento si coincide con la búsqueda
+              item.style.display = "block"; 
             } else {
-              item.style.display = "none"; // ocultar el elemento si no coincide con la búsqueda
+              item.style.display = "none"; 
             }
           });
 
@@ -212,6 +247,17 @@ d.addEventListener("DOMContentLoaded", () => {
           } else {
             info_not_exists.remove();
           }
+        });
+        /** fin de este codigo */
+
+        const btnLikesCount = d.querySelectorAll(".btn-likes");
+        btnLikesCount.forEach(btn => {
+          btn.addEventListener("click", () => {
+            const like_contador = btn.querySelector("#number-likes");
+            let like = parseInt(like_contador.textContent);
+            like++;
+            like_contador.textContent = like.toString();
+          });
         });
       })
       .catch(error => console.error("Hubo un error al hacer la solicitud al archivo JSON", error));
