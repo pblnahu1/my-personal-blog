@@ -1,6 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
+const w = window;
+const d = document;
+
+d.addEventListener("DOMContentLoaded", () => {
   const loadingElements = () => {
-    const d = document;
     
     let main = d.getElementById("main");
     let contenedorArticulos = d.getElementById("contenedor-articulos");
@@ -13,49 +15,140 @@ document.addEventListener("DOMContentLoaded", () => {
         return response.json();
       })
       .then(data => {
+        console.log(data)
         data.articulos.forEach(articulo => {
           let element_items = d.createElement("div");
           element_items.classList.add("items");
           element_items.id = `i-${articulo.id}`;
 
-          element_items.innerHTML = `
-            <div class="c-it-img-info">
-              <div class="title-article">
-                <h3 class="title-desc">${articulo.titulo}</h3>
-              </div>
-              <div class="info-art">
-                <div class="content-hash">
-                  <span class="size-info-art hashtag">#Desarrollo Web</span>
-                  <span class="size-info-art hashtag">#Frameworks</span>
-                  <span class="size-info-art hashtag">+1 tags</span>
-                </div>
-                <div class="art-span">
-                  <span class="size-info-art fecha-publicacion">${articulo.fecha_publicacion}</span>
-                  <span style="margin: 0px 5px;">•</span>
-                  <span class="size-info-art autor">${articulo.autor}</span>
-                </div>
-              </div>
-              <div class="c-img-art">
-                <img src="${articulo.imagen}" alt="${articulo.titulo}">
-              </div>
-            </div>
-            <div class="c-it-btn-more">
-              <button class="btn-likes btn-link" id="btn-likes-item-${articulo.id}" title="Me encanta">
-                <i class="fa-solid fa-heart"></i>
-                <div id="number-likes">12</div>
-              </button>
-              <button class="btn-comments btn-link" id="btn-comments-item-${articulo.id}" title="Comentar">
-                <i class="fa-solid fa-comment-dots"></i>
-              </button>
-              <a href="${articulo.url}" target="_blank" class="btn-more btn-link" id="btn-more-link-item-${articulo.id}" title="Link">
-                <i class="fa-solid fa-link"></i>
-              </a>
-              <!--<button class="btn-bookmark btn-link" id="btn-bookmark-item-${articulo.id}">
-                <i class="fa-solid fa-bookmark"></i>
-              </button>-->
-            </div>
-          `;
+          // creo el contenedor de la info de la imagen
+          let imagen_info_contenedor = d.createElement("div");
+          imagen_info_contenedor.classList.add("c-it-img-info");
+
+          // creo el contenedor del titulo del articulo
+          let titulo_contenedor = d.createElement("div");
+          titulo_contenedor.classList.add("title-article");
+
+          let title = d.createElement("h3");
+          title.classList.add("title-desc");
+          title.textContent = articulo.titulo;
+
+          titulo_contenedor.appendChild(title);
+
+          // creo el contenedor de la info del artículo
+          let info_contenedor_articulo = d.createElement("div");
+          info_contenedor_articulo.classList.add("info-art");
+
+          if (articulo.hashtags) {
+            // creo el contenedor de las etiquetas
+            let hash_contenedor = d.createElement("div");
+            hash_contenedor.classList.add("content-hash");
+
+            // creo las etiquetas para cada hashtag
+            for (let tag in articulo.hashtags) {
+              if (articulo.hashtags.hasOwnProperty(tag)) {
+                let hashtag = articulo.hashtags[tag];
+                let tagElement = d.createElement("span");
+                tagElement.classList.add("size-info-art", "hashtag");
+                tagElement.textContent = `#${hashtag}`;
+                hash_contenedor.appendChild(tagElement);
+              }
+            }
+
+            // creo el contenedor de la fecha de publicacion y autor
+            let span_contenedor = d.createElement("div");
+            span_contenedor.classList.add("art-span");
+
+            let fecha_publicacion = d.createElement("span");
+            fecha_publicacion.classList.add("size-info-art", "fecha-publicacion");
+            fecha_publicacion.textContent = articulo.fecha_publicacion;
+
+            let autor = d.createElement("span");
+            autor.classList.add("size-info-art", "autor");
+            autor.textContent = articulo.autor;
+
+            span_contenedor.appendChild(fecha_publicacion);
+            span_contenedor.innerHTML += `<span style="margin: 0px 5px;">•</span>`;
+            span_contenedor.appendChild(autor);
+
+            info_contenedor_articulo.appendChild(hash_contenedor);
+            info_contenedor_articulo.appendChild(span_contenedor);
+          } else {
+            console.error("El objeto hashtags no está definido para este articulo")
+          }
+
+          // creo el contenedor de la imagen
+          let imagen_container = d.createElement("div");
+          imagen_container.classList.add("c-img-art");
+          
+          let image = d.createElement("img");
+          image.src = articulo.imagen;
+          image.alt = articulo.titulo;
+
+          imagen_container.appendChild(image);
+
+          // agreggo elementos al contenedor principal edl artículo
+          imagen_info_contenedor.appendChild(titulo_contenedor);
+          imagen_info_contenedor.appendChild(info_contenedor_articulo);
+          imagen_info_contenedor.appendChild(imagen_container);
+
+          // creo el contenedor de botones adicionales
+          let button_container = d.createElement("div");
+          button_container.classList.add("c-it-btn-more");
+
+          // creo el boton de me gusta
+          let like_button = d.createElement("button");
+          like_button.classList.add("btn-likes", "btn-link");
+          like_button.id = `btn-likes-item-${articulo.id}`;
+          like_button.title = "Me encanta";
+
+          let like_icon = d.createElement("i");
+          like_icon.classList.add("fa-solid", "fa-heart");
+
+          let like_contador = d.createElement("div");
+          like_contador.id = "number-likes";
+          like_contador.textContent = "12"; // ponele q hay 12 me gustas, es a modo de ejemplo
+
+          like_button.appendChild(like_icon);
+          like_button.appendChild(like_contador);
+
+          // creo el botón de comentarios
+          let comment_boton = d.createElement("button");
+          comment_boton.classList.add("btn-comments", "btn-link");
+          comment_boton.id = `btn-comments-item-${articulo.id}`;
+          comment_boton.title = "Comentar";
+
+          let comment_icon = d.createElement("i");
+          comment_icon.classList.add("fa-solid", "fa-comment-dots");
+
+          comment_boton.appendChild(comment_icon);
+
+          // creo el botón de más información
+          let boton_more_info_link = d.createElement("a");
+          boton_more_info_link.classList.add("btn-more", "btn-link");
+          boton_more_info_link.id = `btn-more-link-item-${articulo.id}`;
+          boton_more_info_link.href = articulo.url;
+          boton_more_info_link.target = "_blank";
+          boton_more_info_link.title = "Link";
+
+          let boton_more_info_icon = d.createElement("i");
+          boton_more_info_icon.classList.add("fa-solid", "fa-link");
+
+          boton_more_info_link.appendChild(boton_more_info_icon);
+
+          // agrego botones al contenedor de botones
+          button_container.appendChild(like_button);
+          button_container.appendChild(comment_boton);
+          button_container.appendChild(boton_more_info_link);
+
+          // agrego elementos al contenedor principal del artículo
+          element_items.appendChild(imagen_info_contenedor);
+          element_items.appendChild(button_container);
+
+          // agrego el artículo al contenedor de artículos
           contenedorArticulos.appendChild(element_items);
+
+          /**********************************************/
 
           // ventana emergente para cada Artículo con más información detallada.
           let btnAbrirModal = d.getElementById(`i-${articulo.id}`);
@@ -88,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
           parrafo.innerText = "Hola, esta es una ventana emergente";
           modal_contenido.appendChild(parrafo);
 
-          window.onclick = function (e) {
+          w.onclick = function (e) {
             if (e.target === modal) {
               modal.style.display = "none";
             }

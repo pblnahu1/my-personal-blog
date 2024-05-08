@@ -7,7 +7,11 @@
       "fecha_publicacion": "2024",
       "categoria": "Desarrollo Web",
       "imagen": "assets/img/img-articles/img-article-1.png",
-      "url": "https://www.freecodecamp.org/news/whats-the-difference-between-react-and-nextjs/"
+      "url": "https://www.freecodecamp.org/news/whats-the-difference-between-react-and-nextjs/",
+      "hashtags": {
+        "tag-one": "desarrolloweb",
+        "tag-two": "frameworks"
+      }
     },
     {
       "id": 2,
@@ -16,7 +20,11 @@
       "fecha_publicacion": "2024",
       "categoria": "Desarrollo Web",
       "imagen": "assets/img/img-articles/img-article-2.png",
-      "url": "https://www.reactjs.wiki/que-es-el-renderizado-de-listas-en-react"
+      "url": "https://www.reactjs.wiki/que-es-el-renderizado-de-listas-en-react",
+      "hashtags": {
+        "tag-one": "desarrolloweb",
+        "tag-two": "frameworks"
+      }
     },
     {
       "id": 3,
@@ -25,7 +33,11 @@
       "fecha_publicacion": "2024",
       "categoria": "Diseño",
       "imagen": "assets/img/img-articles/img-article-3.png",
-      "url": "https://fffuel.co/"
+      "url": "https://fffuel.co/",
+      "hashtags": {
+        "tag-one": "desarrolloweb",
+        "tag-two": "diseño"
+      }
     },
     {
       "id": 4,
@@ -34,7 +46,11 @@
       "fecha_publicacion": "2024",
       "categoria": "Desarrollo Web",
       "imagen": "assets/img/img-articles/img-article-4.png",
-      "url": "https://dev.to/hiro9108/javascript-vs-typescript-why-we-should-learn-typescript-4d5o?ref=dailydev"
+      "url": "https://dev.to/hiro9108/javascript-vs-typescript-why-we-should-learn-typescript-4d5o?ref=dailydev",
+      "hashtags": {
+        "tag-one": "desarrolloweb",
+        "tag-two": "programación"
+      }
     },
     {
       "id": 5,
@@ -43,7 +59,11 @@
       "fecha_publicacion": "2024",
       "categoria": "Desarrollo Web",
       "imagen": "assets/img/img-articles/img-article-5.png",
-      "url": "https://github.com/pblnahu1/fetching-data-api"
+      "url": "https://github.com/pblnahu1/fetching-data-api",
+      "hashtags": {
+        "tag-one": "programación",
+        "tag-two": "javascript"
+      }
     },
     {
       "id": 6,
@@ -52,7 +72,11 @@
       "fecha_publicacion": "2024",
       "categoria": "Ventas de Sitios Web",
       "imagen": "assets/img/img-articles/img-article-6.png",
-      "url": "https://www.martinmarco.com.ar/cuanto-cuesta-una-pagina-web/"
+      "url": "https://www.martinmarco.com.ar/cuanto-cuesta-una-pagina-web/",
+      "hashtags": {
+        "tag-one": "argentina",
+        "tag-two": "páginasweb"
+      }
     },
     {
       "id": 7,
@@ -61,7 +85,11 @@
       "fecha_publicacion": "2024",
       "categoria": "Desarrollo Web",
       "imagen": "assets/img/img-articles/img-article-7.png",
-      "url": "https://formsubmit.co/"
+      "url": "https://formsubmit.co/",
+      "hashtags": {
+        "tag-one": "forms",
+        "tag-two": "desarrolloweb"
+      }
     },
     {
       "id": 8,
@@ -70,7 +98,11 @@
       "fecha_publicacion": "2024",
       "categoria": "Desarrollo Web",
       "imagen": "assets/img/img-articles/img-article-8.png",
-      "url": "https://coolors.co/"
+      "url": "https://coolors.co/",
+      "hashtags": {
+        "tag-one": "userinterface",
+        "tag-two": "diseño"
+      }
     }
   ]
 }
