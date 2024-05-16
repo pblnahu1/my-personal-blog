@@ -1,5 +1,5 @@
 
-import { mostrarMasArticulos, artMostrar } from "./main.mjs";
+import { mostrarMasArticulos, fetchingArtMostrar } from "./main.mjs";
 
 const w = window;
 const d = document;
@@ -272,7 +272,7 @@ d.addEventListener("DOMContentLoaded", () => {
   const render = () => {
     loadingElements();
     mostrarMasArticulos();
-    artMostrar();
+    fetchingArtMostrar();
   }
 
   render();

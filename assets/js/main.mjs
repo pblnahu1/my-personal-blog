@@ -18,13 +18,12 @@ export const mostrarMasArticulos = () => {
     console.log(artMostrar)
   }  
 
-  artMostrar();
+  // fetchingArtMostrar();
 }
 
-export const artMostrar = async () => {
+export const fetchingArtMostrar = async () => {
   const response = await fetch("assets/js/data-articles.json")
   const data = await response.json()
-  console.log(data);
 
   fnArtMostrar(data.articulos)
 
