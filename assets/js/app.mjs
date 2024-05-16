@@ -5,6 +5,12 @@ const w = window;
 const d = document;
 
 d.addEventListener("DOMContentLoaded", () => {
+  /**
+   * Función que carga elementos desde un archivo JSON, crea elementos, y manejar la funcionalidad de búsqueda y "me gustas".
+   *
+   * @param None
+   * @return None
+   */
   const loadingElements = () => {
     
     let main = d.getElementById("main");
@@ -269,6 +275,12 @@ d.addEventListener("DOMContentLoaded", () => {
       .catch(error => console.error("Hubo un error al hacer la solicitud al archivo JSON", error));
   }
 
+  /**
+   * Una función que llama a loadingElements, mostrarMasArticulos y fetchingArtMostrar.
+   *
+   * @param {} - 
+   * @return {} - 
+   */
   const render = () => {
     loadingElements();
     mostrarMasArticulos();
