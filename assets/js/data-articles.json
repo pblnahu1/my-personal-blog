@@ -103,6 +103,45 @@
         "tag-one": "userinterface",
         "tag-two": "diseño"
       }
+    },
+    {
+      "id": 9,
+      "titulo": "YOU: Conversa con la IA",
+      "autor": "You.ai",
+      "fecha_publicacion": "2024",
+      "categoria": "Inteligencia Artificial",
+      "imagen": "assets/img/img-articles/img-article-9.png",
+      "url": "https://you.com/",
+      "hashtags": {
+        "tag-one": "artificialintelligence",
+        "tag-two": "gpt"
+      }
+    },
+    {
+      "id": 10,
+      "titulo": "¿Qué es el Big Data y cómo afecta nuestra vida cotidiana?",
+      "autor": "Medium",
+      "fecha_publicacion": "2024",
+      "categoria": "Desarrollo Web",
+      "imagen": "assets/img/img-articles/img-article-10.png",
+      "url": "https://medium.com/voii/qu%C3%A9-es-el-big-data-y-c%C3%B3mo-afecta-nuestra-vida-cotidiana-dac480bd63a6",
+      "hashtags": {
+        "tag-one": "bigdata",
+        "tag-two": "artificialintelligence"
+      }
+    },
+    {
+      "id": 11,
+      "titulo": "Retos de programación con JavaScript",
+      "autor": "MiduDev",
+      "fecha_publicacion": "2024",
+      "categoria": "Desarrollo Web",
+      "imagen": "assets/img/img-articles/img-article-11.png",
+      "url": "https://adventjs.dev/es",
+      "hashtags": {
+        "tag-one": "javascript",
+        "tag-two": "desarrolloweb"
+      }
     }
   ]
 }
