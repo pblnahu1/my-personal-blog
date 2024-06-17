@@ -167,12 +167,6 @@ export function fnElementsDOM(articulo) {
       !e.target.classList.contains("btn-likes") ||
       !e.target.classList.contains("btn-link"))
     ) {
-      // btn_likes.forEach(btn => {
-      //   btn.click();
-      // })
-      // btn_comments.forEach(btn => {
-      //   btn.click();
-      // })
       d.querySelectorAll(".modal").forEach((modal) => {
         modal.style.display = "none";
       });
@@ -184,23 +178,48 @@ export function fnElementsDOM(articulo) {
     }
   }
 
+  // Contenido de cada Modal
   let modal_contenido = d.createElement("div");
   modal_contenido.classList.add("modal-contenido");
   modal.appendChild(modal_contenido);
 
+  let header_modal = d.createElement("div");
+  header_modal.classList.add("header-modal-content");
+  modal_contenido.appendChild(header_modal);
+
+  let secciones_botones_1 = d.createElement("div");
+  secciones_botones_1.classList.add("contenedor-botones-atrás", "seccion-btn-modal");
+  header_modal.appendChild(secciones_botones_1);
+
+  let boton_atras = d.createElement("button");
+  boton_atras.innerHTML = "&#8592;";
+  boton_atras.classList.add("boton-atras", "btn-modal-header");
+  secciones_botones_1.appendChild(boton_atras);
+
+  let boton_avanzar = d.createElement("button");
+  boton_avanzar.innerHTML = "&#8594;";
+  boton_avanzar.classList.add("boton-avanzar", "btn-modal-header");
+  secciones_botones_1.appendChild(boton_avanzar);
+
+  let secciones_botones_2 = d.createElement("div");
+  secciones_botones_2 = d.createElement("div");
+  secciones_botones_2.classList.add("contenedor-botones-cerrar-link", "seccion-btn-modal");
+  header_modal.appendChild(secciones_botones_2);
+
+  let boton_link = d.createElement("button");
+  boton_link.classList.add("boton-link-modal");
+  boton_link.innerHTML = `Leer <li class="fa-solid fa-up-right-from-square"></li>`;
+  secciones_botones_2.appendChild(boton_link);
+
   let spanCerrar = d.createElement("span");
   spanCerrar.classList.add("cerrar");
   spanCerrar.innerHTML = "&times;";
-  modal_contenido.appendChild(spanCerrar);
+  secciones_botones_2.appendChild(spanCerrar);
 
   spanCerrar.onclick = function (e) {
     e.stopPropagation();
     modal.style.display = "none";
   }
-
-  let parrafo = d.createElement("p");
-  parrafo.innerText = "Hola, esta es una ventana emergente";
-  modal_contenido.appendChild(parrafo);
 
   w.onclick = function (e) {
     if (e.target === modal) {
