@@ -228,9 +228,18 @@ export function fnElementsDOM(articulo) {
   modal_contenido.appendChild(main_modal);
 
   let seccion_articulo = d.createElement("section");
-  seccion_articulo.classList.add("section-articulo");
+  seccion_articulo.classList.add("section-articulo", "seccion-articlo-articulo");
   seccion_articulo.id = `seccion_articulo_${articulo.id}`;
   main_modal.appendChild(seccion_articulo);
+
+  let separador = d.createElement("hr");
+  separador.classList.add("article-separator");
+  main_modal.appendChild(separador);
+
+  let seccion_articulo_info = d.createElement("section");
+  seccion_articulo_info.classList.add("section-articulo", "seccion-articulo-info");
+  seccion_articulo_info.id = `seccion_articulo_info_${articulo.id}`;
+  main_modal.appendChild(seccion_articulo_info);
 
   let art = d.createElement("article");
   art.classList.add("articulo");
@@ -250,11 +259,9 @@ export function fnElementsDOM(articulo) {
   cita_description.appendChild(desc);
 
   if (articulo.hashtags) {
-    // creo el contenedor de las etiquetas
     let hash_contenedor = d.createElement("div");
     hash_contenedor.classList.add("content-hash");
 
-    // creo las etiquetas para cada hashtag
     for (let tag in articulo.hashtags) {
       if (articulo.hashtags.hasOwnProperty(tag)) {
         let hashtag = articulo.hashtags[tag];
@@ -265,7 +272,6 @@ export function fnElementsDOM(articulo) {
       }
     }
 
-    // creo el contenedor de la fecha de publicacion y autor
     let span_contenedor = d.createElement("div");
     span_contenedor.classList.add("art-span");
 
@@ -295,6 +301,104 @@ export function fnElementsDOM(articulo) {
   img_modal.src = articulo.imagen;
   img_modal.alt = articulo.titulo;
   img_modal_content.appendChild(img_modal);
+
+  let contenedor_botones_modal = d.createElement("div");
+  contenedor_botones_modal.classList.add("contenedor-botones-modal");
+  art.appendChild(contenedor_botones_modal);
+  
+  let button_container_modal = d.createElement("div");
+  button_container_modal.classList.add("c-it-btn-more", "c-it-btn-more-modal");
+  
+  // creo el boton de me gusta
+  let like_button_modal = d.createElement("button");
+  like_button_modal.classList.add("btn-likes", "btn-link");
+  like_button_modal.id = `btn-likes-item-${articulo.id}`;
+  like_button_modal.title = "Me encanta";
+
+  let like_icon_modal = d.createElement("i");
+  like_icon_modal.classList.add("fa-solid", "fa-heart");
+
+  let like_contador_modal = d.createElement("div");
+  like_contador_modal.id = "number-likes";
+  like_contador_modal.textContent = "0"; // ponele q hay 12 me gustas, es a modo de ejemplo
+
+  like_button_modal.appendChild(like_icon_modal);
+  like_button_modal.appendChild(like_contador_modal);
+
+  // creo el botón de comentarios
+  let comment_boton_modal = d.createElement("button");
+  comment_boton_modal.classList.add("btn-comments", "btn-link");
+  comment_boton_modal.id = `btn-comments-item-${articulo.id}`;
+  comment_boton_modal.title = "Comentar";
+
+  let comment_icon_modal = d.createElement("i");
+  comment_icon_modal.classList.add("fa-solid", "fa-comment-dots");
+
+  comment_boton_modal.appendChild(comment_icon_modal);
+
+  let boton_more_info_link_modal = d.createElement("a");
+  boton_more_info_link_modal.classList.add("btn-more", "btn-link");
+  boton_more_info_link_modal.id = `btn-more-link-item-${articulo.id}`;
+  boton_more_info_link_modal.href = articulo.url;
+  boton_more_info_link_modal.target = "_blank";
+  boton_more_info_link_modal.title = "Link";
+
+  let boton_more_info_icon_modal = d.createElement("i");
+  boton_more_info_icon_modal.classList.add("fa-solid", "fa-link");
+
+  boton_more_info_link_modal.appendChild(boton_more_info_icon_modal);
+
+  button_container_modal.appendChild(like_button_modal);
+  button_container_modal.appendChild(comment_boton_modal);
+  button_container_modal.appendChild(boton_more_info_link_modal);
+
+  contenedor_botones_modal.appendChild(button_container_modal);
+
+  let article_comments = d.createElement("article");
+  article_comments.classList.add("article-comments");
+  seccion_articulo.appendChild(article_comments);
+
+  let comentariosTitulo = d.createElement("h4");
+  comentariosTitulo.textContent = "Comentarios";
+  article_comments.appendChild(comentariosTitulo);
+
+  let comentariosLista = d.createElement("ul");
+  comentariosLista.classList.add("comentarios-lista");
+  article_comments.appendChild(comentariosLista);
+
+  let formularioComentario = d.createElement("form");
+  formularioComentario.classList.add("formulario-comentario");
+  article_comments.appendChild(formularioComentario);
+
+  let inputComentario = d.createElement("textarea");
+  inputComentario.classList.add("input-comentario");
+  inputComentario.placeholder = "Escribe tu comentario aquí...";
+  formularioComentario.appendChild(inputComentario);
+
+  let botonAgregarComentario = d.createElement("button");
+  botonAgregarComentario.classList.add("btn-agregar-comentario");
+  botonAgregarComentario.textContent = "Agregar Comentario";
+  formularioComentario.appendChild(botonAgregarComentario);
+
+  botonAgregarComentario.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    let comentarioTexto = inputComentario.value.trim();
+    if (comentarioTexto !== "") {
+      let comentarioElemento = d.createElement("li");
+      comentarioElemento.classList.add("comentario");
+      comentarioElemento.textContent = comentarioTexto;
+
+      comentariosLista.appendChild(comentarioElemento);
+
+      inputComentario.value = "";
+    }
+  });
+
+  let recomendaciones_btn = d.createElement("div");
+  recomendaciones_btn.classList.add("container-btn-recomendar");
+  recomendaciones_btn.textContent = "Acá irá para copiar el link, y compartir en redes sociales";
+  seccion_articulo_info.appendChild(recomendaciones_btn);
 
   w.onclick = function (e) {
     if (e.target === modal) {

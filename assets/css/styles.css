@@ -251,10 +251,16 @@
 }
 
 .main-modal {
+  display: flex;
   border: 1px solid #888;
   border-radius: 10px;
   margin-top: 15px;
   padding: 20px;
+}
+
+.section-articulo {
+  display: flex;
+  flex-direction: column;
 }
 
 .articulo {
@@ -262,7 +268,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
   text-align: left;
 }
@@ -282,6 +288,20 @@ blockquote p {
 
 .img-modal-content img {
   max-width: 500px;
+}
+
+.contenedor-botones-modal {
+  width: 83.6%;
+  margin-top: 20px;
+}
+
+.article-separator {
+  border: none;
+  /* height: 100%; */
+  width: 1px;
+  background: #888;
+  margin: 0 20px;
+  display: inline-block;
 }
 
 /* ? banners */
@@ -400,6 +420,10 @@ blockquote p {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.c-it-btn-more-modal {
+  justify-content: space-between;
 }
 
 .btn-link {
