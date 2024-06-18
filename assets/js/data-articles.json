@@ -11,7 +11,8 @@
       "hashtags": {
         "tag-one": "desarrolloweb",
         "tag-two": "frameworks"
-      }
+      },
+      "description": "Este artículo explora las diferencias entre React.JS y Next.JS, dos populares frameworks de desarrollo web, destacando sus características y casos de uso."
     },
     {
       "id": 2,
@@ -24,7 +25,8 @@
       "hashtags": {
         "tag-one": "desarrolloweb",
         "tag-two": "frameworks"
-      }
+      },
+      "description": "Este artículo explica en detalle cómo funciona el renderizado de listas en React, una técnica fundamental para manejar datos dinámicos en aplicaciones web modernas."
     },
     {
       "id": 3,
@@ -37,7 +39,8 @@
       "hashtags": {
         "tag-one": "desarrolloweb",
         "tag-two": "diseño"
-      }
+      },
+      "description": "FFFUEL ofrece un generador de SVG gratuito ideal para proyectos de diseño web, proporcionando herramientas para personalizar gráficos vectoriales."
     },
     {
       "id": 4,
@@ -50,7 +53,8 @@
       "hashtags": {
         "tag-one": "desarrolloweb",
         "tag-two": "programación"
-      }
+      },
+      "description": "Este artículo compara JavaScript y TypeScript, discutiendo las ventajas de usar TypeScript y por qué deberíamos considerarlo en proyectos de desarrollo web."
     },
     {
       "id": 5,
@@ -63,7 +67,8 @@
       "hashtags": {
         "tag-one": "programación",
         "tag-two": "javascript"
-      }
+      },
+      "description": "Este artículo explica cómo realizar Fetching de datos utilizando JavaScript, proporcionando ejemplos prácticos y recursos útiles para desarrolladores."
     },
     {
       "id": 6,
@@ -76,7 +81,8 @@
       "hashtags": {
         "tag-one": "argentina",
         "tag-two": "páginasweb"
-      }
+      },
+      "description": "Martin Marco explora los costos asociados con el desarrollo y mantenimiento de páginas web en Argentina para el año 2024, proporcionando una guía detallada para potenciales clientes y desarrolladores."
     },
     {
       "id": 7,
@@ -89,7 +95,8 @@
       "hashtags": {
         "tag-one": "forms",
         "tag-two": "desarrolloweb"
-      }
+      },
+      "description": "Este artículo introduce FormSubmit, una plataforma que facilita el envío de formularios por correo electrónico, ideal para desarrolladores web que necesitan una solución simple y efectiva."
     },
     {
       "id": 8,
@@ -102,7 +109,8 @@
       "hashtags": {
         "tag-one": "userinterface",
         "tag-two": "diseño"
-      }
+      },
+      "description": "Coolors.co ofrece un generador de paletas de colores que ayuda a mejorar la interfaz de usuario (UI), proporcionando combinaciones de colores armoniosas y herramientas de personalización."
     },
     {
       "id": 9,
@@ -115,7 +123,8 @@
       "hashtags": {
         "tag-one": "artificialintelligence",
         "tag-two": "gpt"
-      }
+      },
+      "description": "YOU es una plataforma que permite conversar con inteligencias artificiales de manera interactiva, explorando el potencial de la IA en aplicaciones cotidianas y comerciales."
     },
     {
       "id": 10,
@@ -128,7 +137,8 @@
       "hashtags": {
         "tag-one": "bigdata",
         "tag-two": "artificialintelligence"
-      }
+      },
+      "description": "Este artículo explora qué es el Big Data y cómo influye en nuestras vidas diarias, abordando casos de uso y la importancia de esta tecnología emergente."
     },
     {
       "id": 11,
@@ -141,7 +151,8 @@
       "hashtags": {
         "tag-one": "javascript",
         "tag-two": "desarrolloweb"
-      }
+      },
+      "description": "Este artículo presenta desafíos de programación en JavaScript, diseñados para mejorar las habilidades de desarrollo de los programadores y proporcionar experiencias de aprendizaje prácticas."
     }
   ]
 }

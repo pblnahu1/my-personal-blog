@@ -206,9 +206,11 @@ export function fnElementsDOM(articulo) {
   secciones_botones_2.classList.add("contenedor-botones-cerrar-link", "seccion-btn-modal");
   header_modal.appendChild(secciones_botones_2);
 
-  let boton_link = d.createElement("button");
+  let boton_link = d.createElement("a");
   boton_link.classList.add("boton-link-modal");
   boton_link.innerHTML = `Leer <li class="fa-solid fa-up-right-from-square"></li>`;
+  boton_link.href = `${articulo.url}`;
+  boton_link.target = "_blank";
   secciones_botones_2.appendChild(boton_link);
 
   let spanCerrar = d.createElement("span");
@@ -220,6 +222,79 @@ export function fnElementsDOM(articulo) {
     e.stopPropagation();
     modal.style.display = "none";
   }
+
+  let main_modal = d.createElement("div");
+  main_modal.classList.add("main-modal");
+  modal_contenido.appendChild(main_modal);
+
+  let seccion_articulo = d.createElement("section");
+  seccion_articulo.classList.add("section-articulo");
+  seccion_articulo.id = `seccion_articulo_${articulo.id}`;
+  main_modal.appendChild(seccion_articulo);
+
+  let art = d.createElement("article");
+  art.classList.add("articulo");
+  art.id = `data-${articulo.id}`;
+  seccion_articulo.appendChild(art);
+
+  let title_text = d.createElement("h2");
+  title_text.classList.add("title-text-article");
+  title_text.id = `title-text-${articulo.id}`;
+  title_text.textContent = `${articulo.titulo}`;
+  art.appendChild(title_text);
+
+  let cita_description = d.createElement("blockquote");
+  let desc = d.createElement("p");
+  desc.textContent = `${articulo.description}`;
+  art.appendChild(cita_description);
+  cita_description.appendChild(desc);
+
+  if (articulo.hashtags) {
+    // creo el contenedor de las etiquetas
+    let hash_contenedor = d.createElement("div");
+    hash_contenedor.classList.add("content-hash");
+
+    // creo las etiquetas para cada hashtag
+    for (let tag in articulo.hashtags) {
+      if (articulo.hashtags.hasOwnProperty(tag)) {
+        let hashtag = articulo.hashtags[tag];
+        let tagElement = d.createElement("span");
+        tagElement.classList.add("size-info-art", "hashtag");
+        tagElement.textContent = `#${hashtag}`;
+        hash_contenedor.appendChild(tagElement);
+      }
+    }
+
+    // creo el contenedor de la fecha de publicacion y autor
+    let span_contenedor = d.createElement("div");
+    span_contenedor.classList.add("art-span");
+
+    let fecha_publicacion = d.createElement("span");
+    fecha_publicacion.classList.add("size-info-art", "fecha-publicacion");
+    fecha_publicacion.textContent = articulo.fecha_publicacion;
+
+    let autor = d.createElement("span");
+    autor.classList.add("size-info-art", "autor");
+    autor.textContent = articulo.autor;
+
+    span_contenedor.appendChild(fecha_publicacion);
+    span_contenedor.innerHTML += `<span style="margin: 0px 5px;">•</span>`;
+    span_contenedor.appendChild(autor);
+
+    art.appendChild(hash_contenedor);
+    art.appendChild(span_contenedor);
+  } else {
+    console.error("El objeto hashtags no está definido para este articulo")
+  }
+
+  let img_modal_content = d.createElement("div");
+  img_modal_content.classList.add("img-modal-content");
+  art.appendChild(img_modal_content);
+
+  let img_modal = d.createElement("img");
+  img_modal.src = articulo.imagen;
+  img_modal.alt = articulo.titulo;
+  img_modal_content.appendChild(img_modal);
 
   w.onclick = function (e) {
     if (e.target === modal) {
