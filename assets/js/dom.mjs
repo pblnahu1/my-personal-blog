@@ -164,8 +164,8 @@ export function fnElementsDOM(articulo) {
     if (e.target.id === btnAbrirModal.id ||
       e.target.id === `btn-comments-item-${articulo.id}` ||
       (e.target.closest(".items") &&
-      !e.target.classList.contains("btn-likes") ||
-      !e.target.classList.contains("btn-link"))
+        !e.target.classList.contains("btn-likes") ||
+        !e.target.classList.contains("btn-link"))
     ) {
       d.querySelectorAll(".modal").forEach((modal) => {
         modal.style.display = "none";
@@ -320,28 +320,44 @@ export function fnElementsDOM(articulo) {
 
   let like_contador_modal = d.createElement("div");
   like_contador_modal.id = "number-likes";
-  like_contador_modal.textContent = "0"; // ponele q hay 12 me gustas, es a modo de ejemplo
+  like_contador_modal.textContent = "0";
 
   like_button_modal.appendChild(like_icon_modal);
   like_button_modal.appendChild(like_contador_modal);
 
   // creo el botón de comentarios
-  let comment_boton_modal = d.createElement("button");
+  
+  
+  let comment_boton_modal = d.createElement("a");
   comment_boton_modal.classList.add("btn-comments", "btn-link");
   comment_boton_modal.id = `btn-comments-item-${articulo.id}`;
+  comment_boton_modal.href = "#";
+  comment_boton_modal.textContent = "Comentar";
   comment_boton_modal.title = "Comentar";
 
   let comment_icon_modal = d.createElement("i");
   comment_icon_modal.classList.add("fa-solid", "fa-comment-dots");
-
   comment_boton_modal.appendChild(comment_icon_modal);
+
+  let bookmark_modal = d.createElement("a");
+  bookmark_modal.classList.add("bookmark-btn-modal", "btn-link");
+  bookmark_modal.id = `bookmark-btn-article-${articulo.id}`;
+  bookmark_modal.href = "#";
+  bookmark_modal.textContent = "Guardar";
+  bookmark_modal.title = "Guardar Artículo";
+
+  let bookmark_modal_icon = d.createElement("i");
+  bookmark_modal_icon.classList.add("fa-solid", "fa-bookmark");
+  bookmark_modal.appendChild(bookmark_modal_icon);
+
 
   let boton_more_info_link_modal = d.createElement("a");
   boton_more_info_link_modal.classList.add("btn-more", "btn-link");
   boton_more_info_link_modal.id = `btn-more-link-item-${articulo.id}`;
   boton_more_info_link_modal.href = articulo.url;
   boton_more_info_link_modal.target = "_blank";
-  boton_more_info_link_modal.title = "Link";
+  boton_more_info_link_modal.title = "Copiar";
+  boton_more_info_link_modal.textContent = "Copiar";
 
   let boton_more_info_icon_modal = d.createElement("i");
   boton_more_info_icon_modal.classList.add("fa-solid", "fa-link");
@@ -350,16 +366,18 @@ export function fnElementsDOM(articulo) {
 
   button_container_modal.appendChild(like_button_modal);
   button_container_modal.appendChild(comment_boton_modal);
+  button_container_modal.appendChild(bookmark_modal);
   button_container_modal.appendChild(boton_more_info_link_modal);
 
   contenedor_botones_modal.appendChild(button_container_modal);
 
+  // Seccion comentarios (<article>)
   let article_comments = d.createElement("article");
   article_comments.classList.add("article-comments");
   seccion_articulo.appendChild(article_comments);
 
   let comentariosTitulo = d.createElement("h4");
-  comentariosTitulo.textContent = "Comentarios";
+  comentariosTitulo.textContent = "¿Qué opinas?";
   article_comments.appendChild(comentariosTitulo);
 
   let comentariosLista = d.createElement("ul");
@@ -372,12 +390,12 @@ export function fnElementsDOM(articulo) {
 
   let inputComentario = d.createElement("textarea");
   inputComentario.classList.add("input-comentario");
-  inputComentario.placeholder = "Escribe tu comentario aquí...";
+  inputComentario.placeholder = "Comparta con otros sus opiniones...";
   formularioComentario.appendChild(inputComentario);
 
   let botonAgregarComentario = d.createElement("button");
   botonAgregarComentario.classList.add("btn-agregar-comentario");
-  botonAgregarComentario.textContent = "Agregar Comentario";
+  botonAgregarComentario.textContent = "Comentar";
   formularioComentario.appendChild(botonAgregarComentario);
 
   botonAgregarComentario.addEventListener("click", function (event) {
