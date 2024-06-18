@@ -5,6 +5,7 @@ export function fnSearchItems() {
   const suggestionsContainer = d.getElementById("suggestions");
   const items = Array.from(document.querySelectorAll(".items"));
   const titles = items.map(item => item.querySelector(".title-desc").textContent.trim().toLowerCase());
+  
   buscarInput.addEventListener("input", () => {
     const searchText = buscarInput.value.trim().toLowerCase();
     updateSuggestions(searchText);
@@ -46,7 +47,7 @@ export function fnSearchItems() {
 
   function updateSuggestions(searchText) {
     suggestionsContainer.innerHTML = '';
-    const matchingSuggestions = titles.filter(title => title.toLowerCase().includes(searchText));
+    const matchingSuggestions = titles.filter(title => title.includes(searchText));
 
     if (matchingSuggestions.length > 0) {
       matchingSuggestions.forEach(suggestion => {
