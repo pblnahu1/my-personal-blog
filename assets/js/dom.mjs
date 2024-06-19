@@ -370,10 +370,6 @@ export function fnElementsDOM(articulo) {
     comentariosTitulo.textContent = "¿Qué opinas?";
     article_comments.appendChild(comentariosTitulo);
 
-    let comentariosLista = d.createElement("ul");
-    comentariosLista.classList.add("comentarios-lista");
-    article_comments.appendChild(comentariosLista);
-
     let formularioComentario = d.createElement("form");
     formularioComentario.classList.add("formulario-comentario");
     article_comments.appendChild(formularioComentario);
@@ -388,8 +384,13 @@ export function fnElementsDOM(articulo) {
     botonAgregarComentario.textContent = "Comentar";
     formularioComentario.appendChild(botonAgregarComentario);
 
+   
+
     botonAgregarComentario.addEventListener("click", function (event) {
       event.preventDefault();
+      let comentariosListaContenedor = d.createElement("div");
+      comentariosListaContenedor.classList.add("comentarios-lista-contenedor");
+      article_comments.appendChild(comentariosListaContenedor);
 
       let comentarioTexto = inputComentario.value.trim();
       if (comentarioTexto !== "") {
@@ -397,7 +398,7 @@ export function fnElementsDOM(articulo) {
         comentarioElemento.classList.add("comentario");
         comentarioElemento.textContent = comentarioTexto;
 
-        comentariosLista.appendChild(comentarioElemento);
+        comentariosListaContenedor.appendChild(comentarioElemento);
 
         inputComentario.value = "";
       }
@@ -414,14 +415,19 @@ export function fnElementsDOM(articulo) {
       e.stopPropagation();
       modal.style.display = "none";
     }
+
+    hideModalOnClickOutside(modal);
   }
 
   fnArticulosMain(articulo);
   fnArticulosModal(articulo);
 }
 
-w.onclick = function (e) {
-  if (e.target.classList.contains("modal")) {
-    e.target.style.display = "none";
-  }
-};
+function hideModalOnClickOutside(modal) {
+  w.addEventListener('click', function(event) {
+    if (event.target.classList.contains("modal")) {
+      modal.style.display = 'none';
+    }
+  });
+}
+

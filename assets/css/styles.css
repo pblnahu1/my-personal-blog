@@ -540,6 +540,14 @@ blockquote p {
   box-shadow: 1px 1px 2vmax gold;
 }
 
+.comentarios-lista-contenedor {
+  text-align: left;
+  padding: 15px 5px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
 /* fin estilos para el modal */
 
 .btn-ver-mas {
