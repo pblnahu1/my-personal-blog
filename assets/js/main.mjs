@@ -1,6 +1,5 @@
-import { fnElementsDOM } from "./dom.mjs";
-import { fnLikesItems } from "./likes.mjs";
-import { fnSearchItems } from "./search.mjs";
+
+import { fnLikesComments, fnLikesItems } from "./likes.mjs";
 import { fn_render_dom } from "./render_dom.mjs";
 
 const d = document;
@@ -25,23 +24,15 @@ export const mostrarMasArticulos = () => {
     $btnVerMas.addEventListener("click", () => {
       const inicio = numArticulosMostrados;
       numArticulosMostrados += numArticulosPorMostrar;
-      
-      // const artMostrar = a.filter(art => {
-      //   return art.id > ultimoArticuloID && art.id <= ultimoArticuloID + 3;
-      // })
-
       const artMostrar = a.slice(inicio, numArticulosMostrados);
-
       artMostrar.forEach(articulo => {
         fn_render_dom(articulo);
-        // fnElementsDOM(articulo);
-        // fnSearchItems();
       })
-
       console.log(artMostrar)
       contenedorArticulos.appendChild(artMostrar)
 
       fnLikesItems();
+      fnLikesComments();
     })
   }  
 }

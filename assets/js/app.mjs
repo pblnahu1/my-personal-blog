@@ -1,7 +1,7 @@
 import { mostrarMasArticulos, fetchingArtMostrar } from "./main.mjs";
 import { fnSearchItems } from "./search.mjs";
 import { fnElementsDOM } from "./dom.mjs";
-import { fnLikesItems } from "./likes.mjs";
+import { fnLikesComments, fnLikesItems } from "./likes.mjs";
 import { fn_render_dom } from "./render_dom.mjs";
 
 const d = document;
@@ -29,6 +29,7 @@ d.addEventListener("DOMContentLoaded", () => {
         })
         // invoco a fnSearchItems una vez después de cargar todos los elementos
         fnLikesItems();
+        fnLikesComments();
         fnSearchItems();
       })
       .catch(error => console.error("Hubo un error al hacer la solicitud al archivo JSON", error));

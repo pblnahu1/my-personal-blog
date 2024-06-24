@@ -479,6 +479,47 @@ blockquote p {
   color: red;
 }
 
+.contenedor-acciones-botones {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.contenedor-acciones-botones > button {
+  margin-right: 5px;
+}
+
+.btn-likes-comment, .btn-dislikes-comment {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-likes-comment {
+  background-color: rgb(157, 255, 157);
+}
+
+.btn-likes-comment:hover{
+  border: 1px solid green;
+}
+
+.btn-likes-comment > i {
+  color: green;
+}
+
+.btn-dislikes-comment{
+  background-color: rgb(255, 125, 125);
+}
+
+.btn-dislikes-comment:hover{
+  border: 1px solid red;
+}
+
+.btn-dislikes-comment>i{
+  color: red;
+}
+
 .btn-comments {
   background-color: rgb(172, 203, 226);
   display: flex;

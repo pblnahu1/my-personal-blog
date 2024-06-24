@@ -384,8 +384,6 @@ export function fnElementsDOM(articulo) {
     botonAgregarComentario.textContent = "Comentar";
     formularioComentario.appendChild(botonAgregarComentario);
 
-   
-
     botonAgregarComentario.addEventListener("click", function (event) {
       event.preventDefault();
       let comentariosListaContenedor = d.createElement("div");
@@ -394,11 +392,60 @@ export function fnElementsDOM(articulo) {
 
       let comentarioTexto = inputComentario.value.trim();
       if (comentarioTexto !== "") {
-        let comentarioElemento = d.createElement("li");
+
+        let contenedor_respuestas_span = d.createElement("div");
+        contenedor_respuestas_span.classList.add("contenedor-respuestas-span", "contenedores-comment");
+        comentariosListaContenedor.appendChild(contenedor_respuestas_span);
+
+        let contenedor_acciones_botones = d.createElement("div");
+        contenedor_acciones_botones.classList.add("contenedor-acciones-botones", "contenedores-comment");
+        comentariosListaContenedor.appendChild(contenedor_acciones_botones);
+
+        let comentarioElemento = d.createElement("span");
         comentarioElemento.classList.add("comentario");
         comentarioElemento.textContent = comentarioTexto;
 
-        comentariosListaContenedor.appendChild(comentarioElemento);
+        let like_button_comments = d.createElement("button");
+        like_button_comments.classList.add("btn-likes-comment", "btn-link", "btn-count-comment");
+        like_button_comments.id = `btn-likes-comment-item-${articulo.id}`;
+        like_button_comments.title = "Me encanta";
+
+        let like_icon_comments = d.createElement("i");
+        like_icon_comments.classList.add("fa-solid", "fa-thumbs-up");
+
+        let like_contador_comments = d.createElement("div");
+        like_contador_comments.id = "number-likes-comment";
+        like_contador_comments.textContent = "0";
+
+        like_button_comments.appendChild(like_icon_comments);
+        like_button_comments.appendChild(like_contador_comments);
+
+        let dislike_button_comments = d.createElement("button");
+        dislike_button_comments.classList.add("btn-dislikes-comment", "btn-link", "btn-count-comment");
+        dislike_button_comments.id = `btn-dislikes-comment-item-${articulo.id}`;
+        dislike_button_comments.title = "No me gusta";
+
+        let dislike_icon_comments = d.createElement("i");
+        dislike_icon_comments.classList.add("fa-solid", "fa-thumbs-down");
+
+        let dislike_contador_comments = d.createElement("div");
+        dislike_contador_comments.id = "number-dislikes-comment";
+        dislike_contador_comments.textContent = "0";
+
+        dislike_button_comments.appendChild(dislike_icon_comments);
+        dislike_button_comments.appendChild(dislike_contador_comments);
+
+        let respuestas_comentarios = 1;
+        let responder_btn_comments = d.createElement("button");
+        responder_btn_comments.classList.add("btn-responder", "btn-link");
+        responder_btn_comments.id = `btn-responder-comentario-${respuestas_comentarios++}`;
+        responder_btn_comments.textContent = "Responder";
+        responder_btn_comments.title = "Responder";
+
+        contenedor_respuestas_span.appendChild(comentarioElemento);
+        contenedor_acciones_botones.appendChild(like_button_comments);
+        contenedor_acciones_botones.appendChild(dislike_button_comments);
+        contenedor_acciones_botones.appendChild(responder_btn_comments);
 
         inputComentario.value = "";
       }
