@@ -9,7 +9,7 @@ export function fnLikesItems() {
 }
 
 export function fnLikesComments() {
-  const btnLikesCountComment = d.getElementById(".btn-count-comment");
+  const btnLikesCountComment = d.querySelectorAll(".btn-count-comment");
   btnLikesCountComment.forEach(btn => {
     btn.removeEventListener("click", handleLikeCommentClick);
     btn.addEventListener("click", handleLikeCommentClick);

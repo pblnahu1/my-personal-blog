@@ -624,7 +624,7 @@ blockquote p {
 /* SECCION DE "SOBRE EL DEV" */
 #sct-welcome {
   display: flex;
-  height: 80vh;
+  height: 115vh;
   background: -webkit-linear-gradient(90deg, #76009b,#0076ca,#3aa4ad);
   background: linear-gradient(90deg, #76009b,#0076ca,#3aa4ad);
 }
@@ -647,7 +647,7 @@ blockquote p {
 
 #sct-welcome .item-dev>img {
   margin: 50px 0;
-  max-width: 40%;
+  max-width: 50%;
 }
 
 #sct-welcome .div-text-welcome {
