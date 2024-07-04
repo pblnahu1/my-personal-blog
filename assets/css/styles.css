@@ -589,6 +589,30 @@ blockquote p {
   margin: 10px 0;
 }
 
+.contenedor-info-profile-user {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.contenedor-image-profile-and-username {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contenedor-data-username {
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-data-username .name-profile {
+  font-weight: 800;
+}
+
+.img-profile-comment {
+  border: 1px solid #3E3E3E;
+}
+
 /* fin estilos para el modal */
 
 .btn-ver-mas {

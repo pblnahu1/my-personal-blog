@@ -383,6 +383,8 @@ export function fnElementsDOM(articulo) {
     botonAgregarComentario.classList.add("btn-agregar-comentario");
     botonAgregarComentario.textContent = "Comentar";
     formularioComentario.appendChild(botonAgregarComentario);
+    
+    let userCount = 1, nameCount = 1;
 
     botonAgregarComentario.addEventListener("click", function (event) {
       event.preventDefault();
@@ -391,7 +393,39 @@ export function fnElementsDOM(articulo) {
       article_comments.appendChild(comentariosListaContenedor);
 
       let comentarioTexto = inputComentario.value.trim();
+
+      
+
       if (comentarioTexto !== "") {
+
+        let contenedor_info_profile_user = d.createElement("div");
+        contenedor_info_profile_user.classList.add("contenedor-info-profile-user", "contenedores-comment");
+        comentariosListaContenedor.appendChild(contenedor_info_profile_user);
+
+        let contenedor_image_profile_and_username = d.createElement("div");
+        contenedor_image_profile_and_username.classList.add("contenedor-image-profile-and-username");
+        contenedor_info_profile_user.appendChild(contenedor_image_profile_and_username);
+
+        let img_profile = d.createElement("img");
+        img_profile.classList.add("img-profile-comment");
+        img_profile.src = "assets/img/user-img-comment.png";
+        img_profile.alt = "User Photo";
+        img_profile.width = "40";
+        img_profile.height = "40";
+
+        let contenedor_data_username = d.createElement("div");
+        contenedor_data_username.classList.add("contenedor-data-username");
+        let username_profile = d.createElement("span");
+        username_profile.classList.add("username-profile");
+        username_profile.textContent = `@username-${userCount++}`;
+        let name_profile = d.createElement("span");
+        name_profile.classList.add("name-profile");
+        name_profile.textContent = `Name-${nameCount++}`;
+        contenedor_data_username.appendChild(name_profile);
+        contenedor_data_username.appendChild(username_profile);
+
+        contenedor_image_profile_and_username.appendChild(img_profile);
+        contenedor_image_profile_and_username.appendChild(contenedor_data_username);
 
         let contenedor_respuestas_span = d.createElement("div");
         contenedor_respuestas_span.classList.add("contenedor-respuestas-span", "contenedores-comment");
