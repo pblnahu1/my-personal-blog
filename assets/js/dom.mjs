@@ -344,14 +344,16 @@ export function fnElementsDOM(articulo) {
     let boton_more_info_link_modal = d.createElement("a");
     boton_more_info_link_modal.classList.add("btn-more", "btn-link");
     boton_more_info_link_modal.id = `btn-more-link-item-${articulo.id}`;
-    boton_more_info_link_modal.href = articulo.url;
-    boton_more_info_link_modal.target = "_blank";
+    boton_more_info_link_modal.href = "#";
     boton_more_info_link_modal.title = "Copiar";
     boton_more_info_link_modal.textContent = "Copiar";
 
     let boton_more_info_icon_modal = d.createElement("i");
     boton_more_info_icon_modal.classList.add("fa-solid", "fa-link");
 
+    boton_more_info_link_modal.addEventListener('click', () => {
+      copiarEnlace(articulo.url);
+    })
     boton_more_info_link_modal.appendChild(boton_more_info_icon_modal);
 
     button_container_modal.appendChild(like_button_modal);
@@ -485,10 +487,52 @@ export function fnElementsDOM(articulo) {
       }
     });
 
-    let recomendaciones_btn = d.createElement("div");
-    recomendaciones_btn.classList.add("container-btn-recomendar");
-    recomendaciones_btn.textContent = "Acá irá para copiar el link, y compartir en redes sociales";
-    seccion_articulo_info.appendChild(recomendaciones_btn);
+    let contenedor_redes_sociales = d.createElement("div");
+    contenedor_redes_sociales.classList.add("contenedor-redes-sociales-modal");
+    seccion_articulo_info.appendChild(contenedor_redes_sociales);
+
+    let span_redes_sociales = d.createElement("span");
+    span_redes_sociales.classList.add("span-redes-sociales");
+    span_redes_sociales.textContent = "Recomienda esta publicación";
+    contenedor_redes_sociales.appendChild(span_redes_sociales);
+
+    let info_iconos_redes_sociales = d.createElement("div");
+    info_iconos_redes_sociales.classList.add("info-iconos-redes-sociales");
+    contenedor_redes_sociales.appendChild(info_iconos_redes_sociales);
+
+    const redesSociales = [
+      { nombre: 'Copy Link', BgColor: '#fafafa', color: '#000', icono: 'fa-solid fa-copy', url: `${articulo.url}`},
+      { nombre: 'Facebook', BgColor: '#fafafa', color: '#0077b6', icono: 'fab fa-facebook', url: 'https://www.facebook.com/sharer/sharer.php?u=' },
+      { nombre: 'Twitter', BgColor: '#fafafa', color: '#000', icono: 'fa-brands fa-x-twitter', url: 'https://www.x.com/intent/tweet?url=' },
+      { nombre: 'LinkedIn', BgColor: '#fafafa', color: '#0077b6', icono: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/sharing/share-offsite/?url=' },
+      { nombre: 'WhatsApp', BgColor: '#fafafa', color: '#228b22', icono: 'fab fa-whatsapp', url: 'https://wa.me/?text=' },
+    ];
+
+    redesSociales.forEach(red => { 
+      let button_redes_sociales = d.createElement("button");
+      button_redes_sociales.classList.add("btn-redes-sociales-modal");
+      button_redes_sociales.style.backgroundColor = red.BgColor;
+      button_redes_sociales.innerHTML = `<i class="${red.icono}" style="color: ${red.color}; margin: 0;"></i>`;
+      button_redes_sociales.addEventListener('click', () => {
+        if (red.nombre !== 'Copy Link') {
+          window.open(`${red.url}${encodeURIComponent(articulo.url)}`, '_blank');
+        }
+        if (red.nombre === 'Copy Link') {
+          copiarEnlace(red.url);      
+        }
+      });
+      info_iconos_redes_sociales.appendChild(button_redes_sociales);
+    }) 
+
+    function copiarEnlace(url) {
+      let input = d.createElement('input');
+      input.value = url;
+      d.body.appendChild(input);
+      input.select();
+      d.execCommand('copy');
+      d.body.removeChild(input);
+      alert('Enlace Copiado!' + url);
+    }
   }
   
   function handleClickCerrarSpan(modal, spanCerrar) {

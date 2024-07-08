@@ -2,7 +2,7 @@ import { mostrarMasArticulos, fetchingArtMostrar } from "./main.mjs";
 import { fnSearchItems } from "./search.mjs";
 import { fnElementsDOM } from "./dom.mjs";
 import { fnLikesComments, fnLikesItems } from "./likes.mjs";
-import { fn_render_dom } from "./render_dom.mjs";
+// import { fn_render_dom } from "./render_dom.mjs";
 
 const d = document;
 

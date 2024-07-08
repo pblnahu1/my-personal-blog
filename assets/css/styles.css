@@ -270,6 +270,7 @@
 .section-articulo {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
 }
 
 .articulo {
@@ -611,6 +612,33 @@ blockquote p {
 
 .img-profile-comment {
   border: 1px solid #3E3E3E;
+}
+
+.contenedor-redes-sociales-modal {
+  width: 350px;
+  border: 1px solid #505050;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.info-iconos-redes-sociales {
+  margin: 10px 0;
+}
+
+.btn-redes-sociales-modal {
+  padding: 9px 12px;
+  margin: 5px;
+  font-size: 26px;
+  border-radius: 50px;
+  border: 1px solid transparent;
+}
+
+.btn-redes-sociales-modal:hover{
+  border: 1px solid #d3d3d3;
+}
+
+.btn-redes-sociales {
+
 }
 
 /* fin estilos para el modal */
