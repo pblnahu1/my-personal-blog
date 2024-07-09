@@ -9,26 +9,26 @@ export function fnElementsDOM(articulo) {
     let element_items = d.createElement("div");
     element_items.classList.add("items");
     element_items.id = `i-${articulo.id}`;
-  
+
     let imagen_info_contenedor = d.createElement("div");
     imagen_info_contenedor.classList.add("c-it-img-info");
-    
+
     let titulo_contenedor = d.createElement("div");
     titulo_contenedor.classList.add("title-article");
-    
+
     let title = d.createElement("h3");
     title.classList.add("title-desc");
     title.textContent = articulo.titulo;
-  
+
     titulo_contenedor.appendChild(title);
-    
+
     let info_contenedor_articulo = d.createElement("div");
     info_contenedor_articulo.classList.add("info-art");
-    
+
     if (articulo.hashtags) {
       let hash_contenedor = d.createElement("div");
       hash_contenedor.classList.add("content-hash");
-  
+
       for (let tag in articulo.hashtags) {
         if (articulo.hashtags.hasOwnProperty(tag)) {
           let hashtag = articulo.hashtags[tag];
@@ -41,53 +41,53 @@ export function fnElementsDOM(articulo) {
 
       let span_contenedor = d.createElement("div");
       span_contenedor.classList.add("art-span");
-  
+
       let fecha_publicacion = d.createElement("span");
       fecha_publicacion.classList.add("size-info-art", "fecha-publicacion");
       fecha_publicacion.textContent = articulo.fecha_publicacion;
-  
+
       let autor = d.createElement("span");
       autor.classList.add("size-info-art", "autor");
       autor.textContent = articulo.autor;
-  
+
       span_contenedor.appendChild(fecha_publicacion);
       span_contenedor.innerHTML += `<span style="margin: 0px 5px;">•</span>`;
       span_contenedor.appendChild(autor);
-  
+
       info_contenedor_articulo.appendChild(hash_contenedor);
       info_contenedor_articulo.appendChild(span_contenedor);
     } else {
       console.error("El objeto hashtags no está definido para este articulo")
     }
-    
+
     let imagen_container = d.createElement("div");
     imagen_container.classList.add("c-img-art");
-  
+
     let image = d.createElement("img");
     image.src = articulo.imagen;
     image.alt = articulo.titulo;
-  
+
     imagen_container.appendChild(image);
 
     imagen_info_contenedor.appendChild(titulo_contenedor);
     imagen_info_contenedor.appendChild(info_contenedor_articulo);
     imagen_info_contenedor.appendChild(imagen_container);
-    
+
     let button_container = d.createElement("div");
     button_container.classList.add("c-it-btn-more");
-    
+
     let like_button = d.createElement("button");
     like_button.classList.add("btn-likes", "btn-link");
     like_button.id = `btn-likes-item-${articulo.id}`;
     like_button.title = "Me encanta";
-  
+
     let like_icon = d.createElement("i");
     like_icon.classList.add("fa-solid", "fa-heart");
-  
+
     let like_contador = d.createElement("div");
     like_contador.id = "number-likes";
     like_contador.textContent = "0";
-  
+
     like_button.appendChild(like_icon);
     like_button.appendChild(like_contador);
 
@@ -95,10 +95,10 @@ export function fnElementsDOM(articulo) {
     comment_boton.classList.add("btn-comments", "btn-link");
     comment_boton.id = `btn-comments-item-${articulo.id}`;
     comment_boton.title = "Comentar";
-  
+
     let comment_icon = d.createElement("i");
     comment_icon.classList.add("fa-solid", "fa-comment-dots");
-  
+
     comment_boton.appendChild(comment_icon);
 
     let boton_more_info_link = d.createElement("a");
@@ -107,19 +107,19 @@ export function fnElementsDOM(articulo) {
     boton_more_info_link.href = articulo.url;
     boton_more_info_link.target = "_blank";
     boton_more_info_link.title = "Link";
-  
+
     let boton_more_info_icon = d.createElement("i");
     boton_more_info_icon.classList.add("fa-solid", "fa-link");
-  
+
     boton_more_info_link.appendChild(boton_more_info_icon);
-  
+
     button_container.appendChild(like_button);
     button_container.appendChild(comment_boton);
     button_container.appendChild(boton_more_info_link);
-  
+
     element_items.appendChild(imagen_info_contenedor);
     element_items.appendChild(button_container);
-  
+
     contenedorArticulos.appendChild(element_items);
   }
 
@@ -141,7 +141,7 @@ export function fnElementsDOM(articulo) {
         modal.style.display = "none";
       });
     });
-  
+
     const btn_comments = d.querySelectorAll(`#btn-comments-item-${articulo.id}`);
     btn_comments.forEach(btn => {
       btn.addEventListener("click", () => {
@@ -179,7 +179,7 @@ export function fnElementsDOM(articulo) {
     let modal_contenido = d.createElement("div");
     modal_contenido.classList.add("modal-contenido");
     modal.appendChild(modal_contenido);
-  
+
     let header_modal = d.createElement("div");
     header_modal.classList.add("header-modal-content");
     modal_contenido.appendChild(header_modal);
@@ -385,7 +385,7 @@ export function fnElementsDOM(articulo) {
     botonAgregarComentario.classList.add("btn-agregar-comentario");
     botonAgregarComentario.textContent = "Comentar";
     formularioComentario.appendChild(botonAgregarComentario);
-    
+
     let userCount = 1, nameCount = 1;
 
     botonAgregarComentario.addEventListener("click", function (event) {
@@ -396,7 +396,7 @@ export function fnElementsDOM(articulo) {
 
       let comentarioTexto = inputComentario.value.trim();
 
-      
+
 
       if (comentarioTexto !== "") {
 
@@ -500,29 +500,31 @@ export function fnElementsDOM(articulo) {
     info_iconos_redes_sociales.classList.add("info-iconos-redes-sociales");
     contenedor_redes_sociales.appendChild(info_iconos_redes_sociales);
 
-    const redesSociales = [
-      { nombre: 'Copy Link', BgColor: '#fafafa', color: '#000', icono: 'fa-solid fa-copy', url: `${articulo.url}`},
-      { nombre: 'Facebook', BgColor: '#fafafa', color: '#0077b6', icono: 'fab fa-facebook', url: 'https://www.facebook.com/sharer/sharer.php?u=' },
-      { nombre: 'Twitter', BgColor: '#fafafa', color: '#000', icono: 'fa-brands fa-x-twitter', url: 'https://www.x.com/intent/tweet?url=' },
-      { nombre: 'LinkedIn', BgColor: '#fafafa', color: '#0077b6', icono: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/sharing/share-offsite/?url=' },
-      { nombre: 'WhatsApp', BgColor: '#fafafa', color: '#228b22', icono: 'fab fa-whatsapp', url: 'https://wa.me/?text=' },
-    ];
+    function urlCopyElements(articulo) {
+      const redesSociales = [
+        { nombre: 'Copy Link', BgColor: '#fafafa', color: '#000', icono: 'fa-solid fa-copy', url: `${articulo.url}` },
+        { nombre: 'Facebook', BgColor: '#fafafa', color: '#0077b6', icono: 'fab fa-facebook', url: 'https://www.facebook.com/sharer/sharer.php?u=' },
+        { nombre: 'Twitter', BgColor: '#fafafa', color: '#000', icono: 'fa-brands fa-x-twitter', url: 'https://www.x.com/intent/tweet?url=' },
+        { nombre: 'LinkedIn', BgColor: '#fafafa', color: '#0077b6', icono: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/sharing/share-offsite/?url=' },
+        { nombre: 'WhatsApp', BgColor: '#fafafa', color: '#228b22', icono: 'fab fa-whatsapp', url: 'https://wa.me/?text=' },
+      ];
 
-    redesSociales.forEach(red => { 
-      let button_redes_sociales = d.createElement("button");
-      button_redes_sociales.classList.add("btn-redes-sociales-modal");
-      button_redes_sociales.style.backgroundColor = red.BgColor;
-      button_redes_sociales.innerHTML = `<i class="${red.icono}" style="color: ${red.color}; margin: 0;"></i>`;
-      button_redes_sociales.addEventListener('click', () => {
-        if (red.nombre !== 'Copy Link') {
-          window.open(`${red.url}${encodeURIComponent(articulo.url)}`, '_blank');
-        }
-        if (red.nombre === 'Copy Link') {
-          copiarEnlace(red.url);      
-        }
+      redesSociales.forEach(red => {
+        let button_redes_sociales = d.createElement("button");
+        button_redes_sociales.classList.add("btn-redes-sociales-modal");
+        button_redes_sociales.style.backgroundColor = red.BgColor;
+        button_redes_sociales.innerHTML = `<i class="${red.icono}" style="color: ${red.color}; margin: 0;"></i>`;
+        button_redes_sociales.addEventListener('click', () => {
+          if (red.nombre !== 'Copy Link') {
+            window.open(`${red.url}${encodeURIComponent(articulo.url)}`, '_blank');
+          }
+          if (red.nombre === 'Copy Link') {
+            copiarEnlace(red.url);
+          }
+        });
+        info_iconos_redes_sociales.appendChild(button_redes_sociales);
       });
-      info_iconos_redes_sociales.appendChild(button_redes_sociales);
-    }) 
+    }
 
     function copiarEnlace(url) {
       let input = d.createElement('input');
@@ -533,8 +535,14 @@ export function fnElementsDOM(articulo) {
       d.body.removeChild(input);
       alert('Enlace Copiado!' + url);
     }
+
+    urlCopyElements(articulo);
+
+    function articulosRecomendados() {
+      // TODO: Code
+    }
   }
-  
+
   function handleClickCerrarSpan(modal, spanCerrar) {
     spanCerrar.onclick = function (e) {
       e.stopPropagation();
@@ -549,7 +557,7 @@ export function fnElementsDOM(articulo) {
 }
 
 function hideModalOnClickOutside(modal) {
-  w.addEventListener('click', function(event) {
+  w.addEventListener('click', function (event) {
     if (event.target.classList.contains("modal")) {
       modal.style.display = 'none';
     }
