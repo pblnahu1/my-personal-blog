@@ -156,19 +156,21 @@ export function fnElementsDOM(articulo) {
 
   function handleClickModal(modal, btnAbrirModal, articulo) {
     btnAbrirModal.onclick = function (e) {
-      if (
-        e.target.id === btnAbrirModal.id ||
-        e.target.id === `btn-comments-item-${articulo.id}` ||
-        (e.target.closest(".items") &&
-          !e.target.classList.contains("btn-likes") ||
-          !e.target.classList.contains("btn-link"))
-      ) {
+      if (e.target.id === btnAbrirModal.id) {
         d.querySelectorAll(".modal").forEach((modal) => {
           modal.style.display = "none";
         });
         modal.style.display = "block";
       } else {
-        if (e.currentTarget === e.target && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'A') {
+        if (
+          e.target.id === `btn-comments-item-${articulo.id}` ||
+          (e.target.closest(".items") &&
+            !e.target.classList.contains("btn-likes") &&
+            !e.target.classList.contains("btn-link"))
+        ) {
+          d.querySelectorAll(".modal").forEach((modal) => {
+            modal.style.display = "none";
+          });
           modal.style.display = "block";
         }
       }
@@ -176,6 +178,7 @@ export function fnElementsDOM(articulo) {
 
     fnContenidoCadaModal(modal, articulo);
   }
+
 
   function fnContenidoCadaModal(modal, articulo) {
     let modal_contenido = d.createElement("div");
@@ -538,20 +541,7 @@ export function fnElementsDOM(articulo) {
 
     urlCopyElements(articulo);
 
-    // CORREGIR ESTE APARTADO DEL CÓDIGO:
     function articulosRecomendados() {
-      if (!articulo || Object.keys(articulo).length === 0) {
-        console.error("El array de artículos está vacío o no definido.");
-        return;
-      }
-
-      let seccion_articulo_info = document.getElementById(`seccion_articulo_info_${articulo.id}`);
-
-      if (!seccion_articulo_info) {
-        console.error(`No se encontró el elemento con id seccion_articulo_info_${articulo.id}.`);
-        return;
-      }
-
       let first_container = document.createElement("div");
       first_container.classList.add("modal-right-sidebar");
       seccion_articulo_info.appendChild(first_container);
@@ -564,7 +554,7 @@ export function fnElementsDOM(articulo) {
       title.textContent = "Te puede interesar";
       second_container.appendChild(title);
 
-      let random_articles_contain = document.createElement("div"); // variable q exporto
+      let random_articles_contain = document.createElement("div");
       random_articles_contain.id = "random-articles-contain";
       second_container.appendChild(random_articles_contain);
 
