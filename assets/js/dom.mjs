@@ -1,3 +1,5 @@
+import { cargarArticulos } from "./random-articles.mjs";
+
 const w = window;
 const d = document;
 
@@ -303,7 +305,6 @@ export function fnElementsDOM(articulo) {
     let button_container_modal = d.createElement("div");
     button_container_modal.classList.add("c-it-btn-more", "c-it-btn-more-modal");
 
-    // creo el boton de me gusta
     let like_button_modal = d.createElement("button");
     like_button_modal.classList.add("btn-likes", "btn-link");
     like_button_modal.id = `btn-likes-item-${articulo.id}`;
@@ -363,7 +364,6 @@ export function fnElementsDOM(articulo) {
 
     contenedor_botones_modal.appendChild(button_container_modal);
 
-    // Seccion comentarios (<article>)
     let article_comments = d.createElement("article");
     article_comments.classList.add("article-comments");
     seccion_articulo.appendChild(article_comments);
@@ -389,14 +389,14 @@ export function fnElementsDOM(articulo) {
     let userCount = 1, nameCount = 1;
 
     botonAgregarComentario.addEventListener("click", function (event) {
+
       event.preventDefault();
+
       let comentariosListaContenedor = d.createElement("div");
       comentariosListaContenedor.classList.add("comentarios-lista-contenedor");
       article_comments.appendChild(comentariosListaContenedor);
 
       let comentarioTexto = inputComentario.value.trim();
-
-
 
       if (comentarioTexto !== "") {
 
@@ -538,9 +538,40 @@ export function fnElementsDOM(articulo) {
 
     urlCopyElements(articulo);
 
+    // CORREGIR ESTE APARTADO DEL CÓDIGO:
     function articulosRecomendados() {
-      // TODO: Code
+      if (!articulo || Object.keys(articulo).length === 0) {
+        console.error("El array de artículos está vacío o no definido.");
+        return;
+      }
+
+      let seccion_articulo_info = document.getElementById(`seccion_articulo_info_${articulo.id}`);
+
+      if (!seccion_articulo_info) {
+        console.error(`No se encontró el elemento con id seccion_articulo_info_${articulo.id}.`);
+        return;
+      }
+
+      let first_container = document.createElement("div");
+      first_container.classList.add("modal-right-sidebar");
+      seccion_articulo_info.appendChild(first_container);
+
+      let second_container = document.createElement("div");
+      second_container.classList.add("modal-right-sidebar-container");
+      first_container.appendChild(second_container);
+
+      let title = document.createElement("span");
+      title.textContent = "Te puede interesar";
+      second_container.appendChild(title);
+
+      let random_articles_contain = document.createElement("div"); // variable q exporto
+      random_articles_contain.id = "random-articles-contain";
+      second_container.appendChild(random_articles_contain);
+
+      cargarArticulos(random_articles_contain);
     }
+
+    articulosRecomendados();
   }
 
   function handleClickCerrarSpan(modal, spanCerrar) {
