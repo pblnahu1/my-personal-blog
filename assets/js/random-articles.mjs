@@ -12,7 +12,7 @@ export function cargarArticulos(random_articles_contain, articuloActual) {
       const indicesMostrados = new Set();
       let contador = 0;
 
-      while (indicesMostrados.size < 3 && contador < articulos.length) {
+      while (indicesMostrados.size < 4 && contador < articulos.length) {
         const randomIndex = Math.floor(Math.random() * articulos.length);
 
         if (!indicesMostrados.has(randomIndex) && randomIndex !== articuloActual) {

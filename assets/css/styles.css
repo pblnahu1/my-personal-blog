@@ -641,6 +641,13 @@ blockquote p {
 
 }
 
+.modal-right-sidebar {
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin-top: 30px;
+  width: 350px;
+}
+
 /* fin estilos para el modal */
 
 .btn-ver-mas {
