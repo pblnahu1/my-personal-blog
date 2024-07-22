@@ -23,6 +23,9 @@
   --gray-text-hover: #8F8F8F;
   --gray-icon: #A0A0A0;
   --footer-width: 64rem;
+
+  /* modal */
+  --modal-bordered-articles: #dad2bc;
 }
 
 /* ** */
@@ -180,7 +183,7 @@
   background-color: #fefefe;
   margin: 5% auto 15% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid var(--modal-bordered-articles);
   width: 67%;
   border-radius: 15px;
 }
@@ -190,7 +193,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #888;
+  border: 1px solid var(--modal-bordered-articles);
   padding: 15px 5px;
   border-radius: 10px;
 }
@@ -261,7 +264,7 @@
 
 .main-modal {
   display: flex;
-  border: 1px solid #888;
+  border: 1px solid var(--modal-bordered-articles);
   border-radius: 10px;
   margin-top: 15px;
   padding: 20px;
@@ -303,7 +306,7 @@ blockquote p {
 .contenedor-botones-modal {
   width: 100%;
   margin-top: 20px;
-  border: 1px solid #888;
+  border: 1px solid var(--modal-bordered-articles);
   border-radius: 10px;
   padding: 10px;
 }
@@ -311,7 +314,7 @@ blockquote p {
 .article-separator {
   border: none;
   width: 1px;
-  background: #888;
+  background: var(--modal-bordered-articles);
   margin: 0 20px;
   display: inline-block;
 }
@@ -585,7 +588,7 @@ blockquote p {
 .comentarios-lista-contenedor {
   text-align: left;
   padding: 15px 5px;
-  border: 1px solid #888;
+  border: 1px solid blueviolet;
   border-radius: 10px;
   margin: 10px 0;
 }
@@ -616,9 +619,9 @@ blockquote p {
 
 .contenedor-redes-sociales-modal {
   width: 350px;
-  border: 1px solid #505050;
+  border: 1px solid var(--modal-bordered-articles);
   border-radius: 10px;
-  padding: 5px;
+  padding: 20px 5px;
 }
 
 .info-iconos-redes-sociales {
@@ -642,10 +645,36 @@ blockquote p {
 }
 
 .modal-right-sidebar {
-  border: 1px solid #000;
+  border: 1px solid var(--modal-bordered-articles);
   border-radius: 10px;
-  margin-top: 30px;
+  margin-top: 33px;
   width: 350px;
+}
+
+.modal-right-sidebar-container {
+  margin: 20px 0px;
+}
+
+.modal-right-sidebar-container > span {
+  margin: 20px 0px;
+}
+
+#random-articles-contain {
+  max-width: 300px;
+  margin: auto;
+}
+
+#random-articles-contain .random-article {
+  width: 100%;
+  margin: 15px auto;
+  border-radius: 10px;
+  border: 1px solid var(--modal-bordered-articles);
+  padding: 10px 0;
+}
+
+#random-articles-contain .random-article:hover{
+  cursor: pointer;
+  border: 1px solid #5233ff;
 }
 
 /* fin estilos para el modal */

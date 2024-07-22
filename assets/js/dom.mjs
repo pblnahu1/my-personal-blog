@@ -516,6 +516,7 @@ export function fnElementsDOM(articulo) {
         let button_redes_sociales = d.createElement("button");
         button_redes_sociales.classList.add("btn-redes-sociales-modal");
         button_redes_sociales.style.backgroundColor = red.BgColor;
+        button_redes_sociales.title = `${red.nombre}`;
         button_redes_sociales.innerHTML = `<i class="${red.icono}" style="color: ${red.color}; margin: 0;"></i>`;
         button_redes_sociales.addEventListener('click', () => {
           if (red.nombre !== 'Copy Link') {
