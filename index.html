@@ -83,6 +83,26 @@
     </div>
   </header>
 
+  <!-- menu bar -->
+   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuBars = document.getElementById("menu-bars");
+        const navLinks = document.getElementById("list-nav-link");
+
+        menuBars.addEventListener("click", function (event) {
+          event.preventDefault();
+          if (navLinks.classList.contains("hidden")) {
+            navLinks.classList.remove("hidden");
+            navLinks.classList.add("visible");
+          } else {
+            navLinks.classList.remove("visible");
+            navLinks.classList.add("hidden");
+          }
+        });
+      });
+
+   </script>
+
   <!-- DARKMODE -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {

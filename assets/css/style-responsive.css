@@ -13,6 +13,14 @@
         font-size: 30px;
     }
 
+        .hidden {
+            display: none;
+        }
+    
+        .visible {
+            display: block;
+        }
+
     main {
         display: block;
     }
@@ -68,10 +76,6 @@
 
     #random-articles-contain{
         max-width: 235px;
-    }
-
-    #random-articles-contain .random-article {
-
     }
 }
 
