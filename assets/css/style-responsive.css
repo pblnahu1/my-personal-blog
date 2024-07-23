@@ -1,10 +1,33 @@
 @media screen and (max-width: 1500px){ 
-    .search,
     .nav-bar {
-        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        background-color: var(--color-background-header-footer);
+        height: 0;
+        width: 100%;
+        border-bottom: 1px solid #000;
+        overflow: hidden;
+        transform: translateY(0);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease, height 0.3s ease;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-bar.is-active {
+        height: 35vh;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .list-nav-link {
+        flex-direction: column;
     }
 
     .menu-bars {
+        background-color: transparent;
         display: block;
         place-content: center;
     }
@@ -13,13 +36,9 @@
         font-size: 30px;
     }
 
-        .hidden {
-            display: none;
-        }
-    
-        .visible {
-            display: block;
-        }
+    .search input[type="text"] {
+        width: 155px;
+    }
 
     main {
         display: block;
@@ -30,12 +49,15 @@
     }
 
     .modal {
-        top: 50px;
+        top: 59px;
     }
 
     .modal-contenido {
-        width: 90%;
-        padding: 10px;
+        width: 100%;
+        padding: 25px 12px;
+        margin: 0;
+        border: none;
+        border-radius: 0;
     }
 
     .header-modal-content {

@@ -3,6 +3,7 @@ import { fnSearchItems } from "./search.mjs";
 import { fnElementsDOM } from "./dom.mjs";
 import { fnLikesComments, fnLikesItems } from "./likes.mjs";
 // import { fn_render_dom } from "./render_dom.mjs";
+import hamburguerMenu from "./menu-bar-mobile.mjs";
 
 const d = document;
 
@@ -34,6 +35,8 @@ d.addEventListener("DOMContentLoaded", () => {
       })
       .catch(error => console.error("Hubo un error al hacer la solicitud al archivo JSON", error));
   }
+
+  hamburguerMenu(".menu-bars", ".nav-bar", ".nav-links");
 
   /**
    * Una función que llama a loadingElements, mostrarMasArticulos y fetchingArtMostrar.

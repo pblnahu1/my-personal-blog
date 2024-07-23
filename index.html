@@ -25,22 +25,22 @@
 
   <header class="position_header_navigation">
     <div id="header-container" class="header-container">
-      <!-- <a href="#" target="" class="link-logo">
-        <img src="assets/img/logo-panel.png" alt="logo">
-      </a> -->
       <div class="red-socials-header">
         <li>
-          <a href="https://www.github.com/pblnahu1" class="a-link-red-socials a-github" title="Perfil de Github" target="_blank">
+          <a href="https://www.github.com/pblnahu1" class="a-link-red-socials a-github" title="Perfil de Github"
+            target="_blank">
             <i class="fa-brands fa-github"></i>
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/pablo-nahuel-torrez-33a80324b/" class="a-link-red-socials a-linkedin" title="Perfil de LinkedIn" target="_blank">
+          <a href="https://www.linkedin.com/in/pablo-nahuel-torrez-33a80324b/" class="a-link-red-socials a-linkedin"
+            title="Perfil de LinkedIn" target="_blank">
             <i class="fa-brands fa-linkedin"></i>
           </a>
         </li>
         <li>
-          <a href="mailto:pablotorrez90@outlook.com" class="a-link-red-socials a-email" title="Correo Electrónico" target="_blank">
+          <a href="mailto:pablotorrez90@outlook.com" class="a-link-red-socials a-email" title="Correo Electrónico"
+            target="_blank">
             <i class="fa-solid fa-envelope"></i>
           </a>
         </li>
@@ -54,7 +54,7 @@
         <div class="suggestions hidden" id="suggestions"></div>
       </div>
       <nav id="nav-bar" class="nav-bar">
-        <ul id="list-nav-link">
+        <ul id="list-nav-link" class="list-nav-link">
           <li>
             <a href="#" target="" class="nav-links link-inicio" title="Página de Inicio">
               <i class="fa-solid fa-house"></i>
@@ -77,31 +77,11 @@
           </li>
         </ul>
       </nav>
-      <a href="#" class="nav-links menu-bars">
+      <button class="nav-links menu-bars">
         <i class="fa-solid fa-bars"></i>
-      </a>
+      </button>
     </div>
   </header>
-
-  <!-- menu bar -->
-   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const menuBars = document.getElementById("menu-bars");
-        const navLinks = document.getElementById("list-nav-link");
-
-        menuBars.addEventListener("click", function (event) {
-          event.preventDefault();
-          if (navLinks.classList.contains("hidden")) {
-            navLinks.classList.remove("hidden");
-            navLinks.classList.add("visible");
-          } else {
-            navLinks.classList.remove("visible");
-            navLinks.classList.add("hidden");
-          }
-        });
-      });
-
-   </script>
 
   <!-- DARKMODE -->
   <script>
@@ -147,7 +127,7 @@
 
   <main id="main">
     <!-- Acá van a ir las ventanas emergentes para cada Artículo -->
-    
+
     <div class="info-webpage">
       <h1>Colección de mis artículos preferidos</h1>
       <p>Cada artículo tiene su enlace</p>
@@ -171,29 +151,42 @@
           </h2>
           <div class="div-text-welcome">
             <p>
-              Soy un apasionado desarrollador web con más de un año de experiencia en la creación de sitios web modernos y funcionales. Actualmente, estoy cursando la tecnicatura en Análisis de Sistemas con el objetivo de formalizar mi carrera y continuar avanzando en mi desarrollo profesional.
+              Soy un apasionado desarrollador web con más de un año de experiencia en la creación de sitios web modernos
+              y funcionales. Actualmente, estoy cursando la tecnicatura en Análisis de Sistemas con el objetivo de
+              formalizar mi carrera y continuar avanzando en mi desarrollo profesional.
             </p>
-            
+
             <p>
-              A lo largo de mi tiempo libre, he trabajado en una variedad de proyectos que abarcan desde e-commerce hasta blogs personales, utilizando tecnologías como JavaScript, React, Astro y Tailwind CSS. Cada proyecto es una oportunidad para aprender y aplicar nuevas técnicas que mejoren la experiencia del usuario y la eficiencia del desarrollo.
+              A lo largo de mi tiempo libre, he trabajado en una variedad de proyectos que abarcan desde e-commerce
+              hasta blogs personales, utilizando tecnologías como JavaScript, React, Astro y Tailwind CSS. Cada proyecto
+              es una oportunidad para aprender y aplicar nuevas técnicas que mejoren la experiencia del usuario y la
+              eficiencia del desarrollo.
             </p>
-            
+
             <p>
-              Me especializo en diseñar y desarrollar interfaces de usuario intuitivas y atractivas, siempre enfocándome en los detalles para asegurarme de que cada proyecto cumpla con los estándares de calidad más altos. Mi capacidad para entender las necesidades del cliente y convertirlas en soluciones técnicas efectivas es uno de mis mayores puntos fuertes.
+              Me especializo en diseñar y desarrollar interfaces de usuario intuitivas y atractivas, siempre enfocándome
+              en los detalles para asegurarme de que cada proyecto cumpla con los estándares de calidad más altos. Mi
+              capacidad para entender las necesidades del cliente y convertirlas en soluciones técnicas efectivas es uno
+              de mis mayores puntos fuertes.
             </p>
-            
+
             <p>
-              Estoy comprometido con el aprendizaje continuo y la mejora constante de mis habilidades. Ya sea que esté trabajando en un proyecto independiente o como parte de un equipo, siempre busco formas de innovar y llevar mis habilidades al siguiente nivel.
+              Estoy comprometido con el aprendizaje continuo y la mejora constante de mis habilidades. Ya sea que esté
+              trabajando en un proyecto independiente o como parte de un equipo, siempre busco formas de innovar y
+              llevar mis habilidades al siguiente nivel.
             </p>
-            
+
             <p>
-              Te invito a explorar mi portafolio y a descubrir los proyectos en los que he trabajado. Estoy seguro de que
-              encontrarás algo que llame tu atención y te muestre mi capacidad para abordar desafíos y crear soluciones web excepcionales.
+              Te invito a explorar mi portafolio y a descubrir los proyectos en los que he trabajado. Estoy seguro de
+              que
+              encontrarás algo que llame tu atención y te muestre mi capacidad para abordar desafíos y crear soluciones
+              web excepcionales.
             </p>
 
           </div>
           <div class="div-btn">
-            <a href="https://portfolio-dev-lilac.vercel.app/" class="link-publicaciones" target="_blank" title="Ir al portfolio del desarrollador">
+            <a href="https://portfolio-dev-lilac.vercel.app/" class="link-publicaciones" target="_blank"
+              title="Ir al portfolio del desarrollador">
               <button class="btn btn-dark px-5 py-2 btn-lg boton-icon">
                 Mi Portfolio
                 <i class="fas fa-chevron-right icon"></i>
@@ -314,19 +307,22 @@
       <div class="link-socials">
         <div class="links-icons-footer">
           <li>
-            <a href="https://www.linkedin.com/in/pablo-nahuel-torrez-33a80324b/" class="a-link-red-socials a-linkedin" title="Perfil de LinkedIn" target="_blank">
+            <a href="https://www.linkedin.com/in/pablo-nahuel-torrez-33a80324b/" class="a-link-red-socials a-linkedin"
+              title="Perfil de LinkedIn" target="_blank">
               <i class="fa-brands fa-linkedin"></i>
             </a>
           </li>
 
           <li>
-            <a href="https://www.github.com/pblnahu1/" class="a-link-red-socials a-github" title="Perfil de Github" target="_blank">
+            <a href="https://www.github.com/pblnahu1/" class="a-link-red-socials a-github" title="Perfil de Github"
+              target="_blank">
               <i class="fa-brands fa-github"></i>
             </a>
           </li>
 
           <li>
-            <a href="http://www.instagram.com/_pablotorrez1_/" class="a-link-red-socials a-instagram" title="Cuenta de Instagram" target="_blank">
+            <a href="http://www.instagram.com/_pablotorrez1_/" class="a-link-red-socials a-instagram"
+              title="Cuenta de Instagram" target="_blank">
               <i class="fa-brands fa-instagram"></i>
             </a>
           </li>
@@ -338,7 +334,8 @@
           </li>
 
           <li>
-            <a href="mailto:pablotorrez90@outlook.com" class="a-link-red-socials a-email" title="Correo Electrónico" target="_blank">
+            <a href="mailto:pablotorrez90@outlook.com" class="a-link-red-socials a-email" title="Correo Electrónico"
+              target="_blank">
               <i class="fa-solid fa-envelope"></i>
             </a>
           </li>
@@ -358,8 +355,6 @@
 </body>
 
 </html>
-
-
 
 <script src="assets/js/app.mjs" type="module" defer></script>
 <script src="assets/js/main.mjs" type="module" defer></script>
