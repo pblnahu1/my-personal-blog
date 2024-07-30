@@ -708,7 +708,9 @@ blockquote p {
 /* SECCION DE "SOBRE EL DEV" */
 #sct-welcome {
   display: flex;
-  height: 115vh;
+  /* height: 115vh; */
+  height: auto;
+  padding: 35px 0;
   background: -webkit-linear-gradient(90deg, #76009b,#0076ca,#3aa4ad);
   background: linear-gradient(90deg, #76009b,#0076ca,#3aa4ad);
 }
@@ -727,6 +729,7 @@ blockquote p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-width: 100px;
 }
 
 #sct-welcome .item-dev>img {
@@ -736,7 +739,7 @@ blockquote p {
 
 #sct-welcome .div-text-welcome {
   color: #e2e2e2;
-  width: 60%;
+  width: 85%;
   text-align: justify;
 }
 
@@ -745,16 +748,21 @@ blockquote p {
 }
 
 .boton-icon {
-  margin-top: 25px;
-  padding: 30px;
-  border-radius: 30px;
-  box-shadow: 0 0 3vmax transparent;
-  transition: box-shadow .2s ease-in-out;
+  padding: 15px 30px;
+  /* border-radius: 30px; */
+  box-shadow: 4px 4px transparent;
+  border: 1px solid transparent;
+  transition: box-shadow .2s ease-in-out, border .2s ease-in-out;
   text-transform: uppercase;
 }
 
 .boton-icon:hover {
-  box-shadow: 0 0 3vmax #ffffff;
+  box-shadow: 4px 4px #000000;
+  border: 1px solid #000000;
+}
+
+.boton-icon::after{
+  background-color: #0fe782;
 }
 
 .boton-icon:hover .icon {

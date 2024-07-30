@@ -1,4 +1,4 @@
-@media screen and (max-width: 1500px){ 
+@media screen and (max-width: 1074px){ 
     .nav-bar {
         position: absolute;
         top: 100%;
@@ -99,6 +99,10 @@
     #random-articles-contain{
         max-width: 235px;
     }
+
+    #sct-welcome {
+        height: auto;
+    }
 }
 
 
@@ -110,7 +114,7 @@
     }
 
     #sct-welcome {
-        height: 220vh;
+        /* height: 220vh; */
     }
 
     #sct-welcome .item-dev {
