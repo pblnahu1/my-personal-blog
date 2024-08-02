@@ -184,8 +184,9 @@
   margin: 5% auto 15% auto;
   padding: 20px;
   border: 1px solid var(--modal-bordered-articles);
-  width: 67%;
+  /* width: 67%; */
   border-radius: 15px;
+  max-width: 1000px;
 }
 
 .header-modal-content {

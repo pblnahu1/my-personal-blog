@@ -1,0 +1,15 @@
+:root {
+    --color-body-bg: #000814;
+    --color-txt-body: #edf2f4;
+
+    --color-header-bg: #2b2d42;
+}
+
+body.dark-mode {
+    background-color: var(--color-body-bg);
+    color: var(--color-txt-body);
+}
+
+header.dark-mode {
+    background-color: var(--color-header-bg);
+}
