@@ -1,15 +1,87 @@
 :root {
-    --color-body-bg: #000814;
     --color-txt-body: #edf2f4;
 
-    --color-header-bg: #2b2d42;
+    --color-header-bg: #363536;
+    --color-main-bg: #131515;
+    --color-footer-bg: #363536;
+
+    --bg-input-search: #000814;
+    --bg-suggestions-search: #2b2d42;
+    --bg-suggestions-search-item-hover: #414253;
+
+    --bg-navlinks-hover-header: #001219;
+
+    --bg-items: #0a0908;
+
+
+    --color-modal: #;
+    --bg-modal-contenido: #;
+
 }
 
 body.dark-mode {
-    background-color: var(--color-body-bg);
     color: var(--color-txt-body);
 }
 
-header.dark-mode {
+.dark-mode header {
     background-color: var(--color-header-bg);
+    color: var(--color-txt-body)
+}
+
+.dark-mode main .background-div {
+    /* background-color: var(--color-main-bg); */
+
+    position: fixed;
+    top: 0;
+    z-index: -2;
+    height: 100vh;
+    width: 100%;
+    background-color: #1a1a1a;
+    background-image: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120, 119, 198, 0.3), rgba(255, 255, 255, 0));
+}
+
+.dark-mode footer {
+    background-color: var(--color-footer-bg);
+}
+
+.dark-mode a {
+    color: var(--color-txt-body);
+}
+
+.dark-mode #myBtn {
+    background-color: var(--color-txt-body);
+    color: #000;
+}
+
+.dark-mode #myBtn:hover {
+    background-color: #ddd;
+}
+
+.dark-mode .search input[type="text"] {
+    background-color: var(--bg-input-search);
+    color: var(--color-txt-body);
+}
+
+.dark-mode .suggestions {
+    background-color: var(--bg-suggestions-search);
+    color: var(--color-txt-body);
+    border: none;
+}
+
+.dark-mode .suggestion-item:hover {
+    background-color: var(--bg-suggestions-search-item-hover);
+}
+
+.dark-mode .nav-bar li>.nav-links {
+    border: none;
+}
+
+.dark-mode .nav-bar li>.nav-links:hover {
+    background-color: var(--bg-navlinks-hover-header);
+    border: none;
+}
+
+.dark-mode .items {
+    background-color: var(--bg-items);
+    box-shadow: none;
 }
