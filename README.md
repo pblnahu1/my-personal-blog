@@ -11,3 +11,5 @@ Visualiza el avance del proyecto [Live Preview](https://pablotorrez-blog.netlify
 ## Imágenes del proyecto
 
 ![alt text](/assets/img/screen1-markdown.png "This is a sample image")
+![alt text](/assets/img/screen2-markdown.png "This is a sample image")
+![alt text](/assets/img/screen3-markdown.png "This is a sample image")
