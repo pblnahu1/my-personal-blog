@@ -68,45 +68,41 @@
 .search input[type="text"] {
   width: 470px;
   padding: 10px;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   outline: none;
 }
 
 .search input[type="text"]:focus {
-  box-shadow: 0 0 10px #4e99e9;
+  border: 1px solid #ccc;
 }
 
-.search button[type="submit"] {
-  background-color: #4e99e9;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  padding: 10px 20px;
+.suggestions::-webkit-scrollbar{
+  width: 100%;
+}
+
+.suggestions::-webkit-scrollbar-track{
+  background-color: #fff;
   border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  right: 0;
-  transition: .9s ease;
 }
 
-.search button[type="submit"]:hover {
-  transform: scale(1.1);
-  color: rgb(255, 255, 255);
-  background-color: blue;
+.suggestions::-webkit-scrollbar-thumb{
+  background-color: #000;
+  border-radius: 20px;
 }
 
 .suggestions {
   border: 1px solid #ccc;
-  max-height: 300px;
-  overflow-y: auto;
+  border-radius: 20px;
+  max-height: 350px;
+  overflow: auto;
   position: absolute;
-  top: 100%;
+  top: 42px;
   background-color: white;
   z-index: 1000;
   width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 .suggestion-item {
@@ -156,7 +152,6 @@
 .nav-bar li>.nav-links {
   padding: 10px 12px;
   text-transform: uppercase;
-  border: 1px solid transparent;
   border-radius: 8px;
   transition: all .3s ease-in-out;
   width: auto;
@@ -164,7 +159,6 @@
 }
 
 .nav-bar li>.nav-links:hover {
-  border: 1px solid #c0bfcc;
   border-radius: 8px;
   background-color: #d3d3d3;
 }
@@ -349,8 +343,8 @@ blockquote p {
 .items {
   cursor: pointer;
   background: #e0e0e0;
-  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
-  width: calc(20% - 10px);
+  /* box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff; */
+  width: calc(22% - 10px);
   border: 1px solid transparent;
   border-radius: 25px;
   padding: 0 0.8rem 1.4rem 0.8rem;

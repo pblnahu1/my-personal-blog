@@ -22,8 +22,30 @@
         opacity: 1;
     }
 
+    .nav-bar ul, .contenedor-botones-header {
+        gap: 0;
+    }
+
+    .nav-bar li>.nav-links {
+        padding: 15px 12px;
+        border-radius: 0;
+    }
+
+    .nav-bar li>.nav-links:hover {
+        border-radius: 0;
+    }
+
     .list-nav-link {
         flex-direction: column;
+        width: 100%;
+    }
+
+    .list-nav-link > li {
+        width: 100%;
+    }
+
+    .list-nav-link .nav-links {
+        display: block;
     }
 
     .menu-bars {
@@ -37,7 +59,7 @@
     }
 
     .search input[type="text"] {
-        width: 155px;
+        width: auto;
     }
 
     main {

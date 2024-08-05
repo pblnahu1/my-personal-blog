@@ -5,13 +5,14 @@
     --color-main-bg: #131515;
     --color-footer-bg: #363536;
 
-    --bg-input-search: #000814;
-    --bg-suggestions-search: #2b2d42;
-    --bg-suggestions-search-item-hover: #414253;
+    --bg-input-search: #020408;
+    --bg-suggestions-search: #020408;
+    --bg-suggestions-search-item-hover: #1f1f24;
+    --border-suggestions-search: #3b3bff;
 
-    --bg-navlinks-hover-header: #001219;
+    --bg-navlinks-hover-header: #020408;
 
-    --bg-items: #0a0908;
+    --bg-items: #020408;
 
 
     --color-modal: #;
@@ -29,8 +30,6 @@ body.dark-mode {
 }
 
 .dark-mode main .background-div {
-    /* background-color: var(--color-main-bg); */
-
     position: fixed;
     top: 0;
     z-index: -2;
@@ -62,18 +61,22 @@ body.dark-mode {
     color: var(--color-txt-body);
 }
 
+.dark-mode .search input[type="text"]:focus {
+    border-color: var(--border-suggestions-search);
+}
+
 .dark-mode .suggestions {
     background-color: var(--bg-suggestions-search);
     color: var(--color-txt-body);
-    border: none;
+    border-color: var(--border-suggestions-search);
 }
 
 .dark-mode .suggestion-item:hover {
     background-color: var(--bg-suggestions-search-item-hover);
 }
 
-.dark-mode .nav-bar li>.nav-links {
-    border: none;
+.dark-mode .nav-bar.is-active {
+    background-color: var(--color-header-bg);
 }
 
 .dark-mode .nav-bar li>.nav-links:hover {
