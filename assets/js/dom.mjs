@@ -478,8 +478,8 @@ export function fnElementsDOM(articulo) {
         let responder_btn_comments = d.createElement("button");
         responder_btn_comments.classList.add("btn-responder", "btn-link");
         responder_btn_comments.id = `btn-responder-comentario-${respuestas_comentarios++}`;
-        responder_btn_comments.textContent = "Responder";
         responder_btn_comments.title = "Responder";
+        responder_btn_comments.innerHTML = `<i class="fa-solid fa-reply"></i>`;
 
         contenedor_respuestas_span.appendChild(comentarioElemento);
         contenedor_acciones_botones.appendChild(like_button_comments);
