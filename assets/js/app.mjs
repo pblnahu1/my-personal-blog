@@ -5,7 +5,6 @@ import { fnLikesComments, fnLikesItems } from "./likes.mjs";
 // import { fn_render_dom } from "./render_dom.mjs";
 import hamburguerMenu from "./menu-bar-mobile.mjs";
 import darkMode from "./dark-mode.mjs";
-import btnMagico from "./btn-magico.mjs";
 
 const d = document;
 
@@ -41,6 +40,8 @@ d.addEventListener("DOMContentLoaded", () => {
   hamburguerMenu(".menu-bars", ".nav-bar", ".nav-links");
 
   darkMode(".darkmode");
+
+  
 
   /**
    * Una función que llama a loadingElements, mostrarMasArticulos y fetchingArtMostrar.

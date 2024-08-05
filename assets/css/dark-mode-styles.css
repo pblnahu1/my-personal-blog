@@ -122,3 +122,7 @@ body.dark-mode { color: var(--color-txt-body); }
 .dark-mode .btn-agregar-comentario:hover{
     background-color: #bbbbbb;
 }
+
+.dark-mode .link-github-confetti {
+    border-color: #fff;
+}

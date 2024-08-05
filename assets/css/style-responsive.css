@@ -1,4 +1,13 @@
-@media screen and (max-width: 1074px){ 
+@media screen and (max-width: 1074px){
+    
+    .red-socials-header {
+        gap: 13px;
+    }
+
+    .red-socials-header>li>a>i{
+        font-size: 16px
+    }
+
     .nav-bar {
         position: absolute;
         top: 100%;
@@ -88,9 +97,17 @@
 
     .btn-redes-sociales-modal { font-size: 37px; }
 
-    #random-articles-contain{ max-width: 235px; }
+    /* #random-articles-contain{ max-width: 235px; } */
 
     #sct-welcome { height: auto; }
+
+    .content-github-confetti {
+        flex-direction: column;
+        max-width: 1000px;
+        margin: 0 45px;
+    }
+
+    
 }
 
 
@@ -121,6 +138,8 @@
     }
 
     .footer-bottom { text-align: center; }
+
+    
 }
 
 @media screen and (max-width: 455px) {

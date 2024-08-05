@@ -25,6 +25,9 @@
 
   <!-- icon -->
   <link rel="icon" href="assets/img/icon-pestaña.svg">
+
+  <!-- confetti.js -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </head>
 
 <body id="body">
@@ -116,17 +119,22 @@
     <div class="info-webpage">
       <h1>¡Recursos para agilizar tus proyectos de desarrollo web!</h1>
       <p>Cada artículo tiene su enlace y una breve descripción. ¡Opiná y compartí el que más te guste!</p>
-      <button type="button" class="btn-magico" id="action-btn-magico">
-        <strong>Botón Mágico ✨</strong>
-        <div id="container-stars">
-          <div id="stars"></div>
-        </div>
-
-        <div id="glow">
-          <div class="circle"></div>
-          <div class="circle"></div>
-        </div>
-      </button>
+      
+      <div class="content-github-confetti">
+        <a class="link-github-confetti" href="https://github.com/catdad/canvas-confetti" target="_blank" title="GitHub Repo Confetti">Repo GitHub</a>
+        <button type="button" class="btn-magico" id="action-btn-magico">
+          <strong>Botón Mágico ✨</strong>
+          <div id="container-stars">
+            <div id="stars"></div>
+          </div>
+        
+          <div id="glow">
+            <div class="circle"></div>
+            <div class="circle"></div>
+          </div>
+        </button>
+        <a class="link-github-confetti" href="https://www.kirilv.com/canvas-confetti/" target="_blank" title="Canvas Confetti Examples">Canvas Confetti Examples</a>
+      </div>
     </div>
     <section id="sct-articles" class="sct-articles-i">
       <div class="contenedor-articulos" id="contenedor-articulos">
@@ -351,9 +359,12 @@
     document.getElementById("year").innerHTML = new Date().getFullYear();
   </script>
 
+  <script src="assets/js/btn-confetti.js"></script>
+  <!-- <script src="assets/js/btn-confetti-emoji.js"></script> -->
+  <!-- <script src="assets/js/btn-confetti-fireworks.js"></script> -->
+
   <script src="assets/js/app.mjs" type="module" defer></script>
   <script src="assets/js/main.mjs" type="module" defer></script>
-
 </body>
 
 </html>

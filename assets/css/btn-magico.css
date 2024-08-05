@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 13rem;
+    /* width: 13rem; */
+    width: 100%;
     overflow: hidden;
     height: 3rem;
     background-size: 300% 300%;
@@ -172,4 +173,22 @@ strong {
         transform: scale(0.75);
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
+}
+
+.content-github-confetti {
+    display: flex;
+    /* max-width: 1000px; */
+    width: 55%;
+    gap: 20px;
+}
+
+.link-github-confetti{
+    border: 1px solid #000;
+    width: 100%;
+    font-size: 12px;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5rem;
 }
