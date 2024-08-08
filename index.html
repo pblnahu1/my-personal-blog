@@ -84,34 +84,11 @@
     </div>
   </header>
 
-  <!-- BOTÓN DE VOLVER ARRIBA -->
-  <button onclick="topFunction()" id="myBtn" title="Ir arriba">
+  <button id="myBtn" title="Ir arriba">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
-  <script>
-    function topFunction() {
-      document.body.scrollTop = 0
-      document.documentElement.scrollTop = 0
-    }
-  </script>
-  <script>
-    // Mostrar el botón cuando el usuario se desplaza hacia abajo en la página
-    window.onscroll = function () { scrollFunction() }
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block"
-      } else {
-        document.getElementById("myBtn").style.display = "none"
-      }
-    }
-  </script>
-  <!-- FIN BOTÓN -->
-
-
 
   <main id="main">
-    <!-- Acá van a ir las ventanas emergentes para cada Artículo -->
 
     <div class="background-div">
     </div>
@@ -137,16 +114,11 @@
       </div>
     </div>
     <section id="sct-articles" class="sct-articles-i">
-      <div class="contenedor-articulos" id="contenedor-articulos">
-        <!-- div's necesarios para cada articulo -->
-      </div>
-
-      <!-- boton de ver más -->
+      <div class="contenedor-articulos" id="contenedor-articulos"></div>
       <br>
       <button class="btn-ver-mas" id="action-btn-ver-mas">Ver más</button>
     </section>
 
-    <!-- sobre el dev -->
     <section id="sct-welcome">
       <div class="container">
         <div class="item-dev">
@@ -346,7 +318,7 @@
         </div>
       </div>
     </div>
-    <!-- bottom part section -->
+    
     <div class="footer-bottom">
       <div class="footer-bottom-wrapper">
         <small>© <span id="year"></span>Desarrollado por <a

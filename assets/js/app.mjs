@@ -5,6 +5,7 @@ import { fnLikesComments, fnLikesItems } from "./likes.mjs";
 // import { fn_render_dom } from "./render_dom.mjs";
 import hamburguerMenu from "./menu-bar-mobile.mjs";
 import darkMode from "./dark-mode.mjs";
+import fnBtnScrollTop from "./top-button-scroll.mjs";
 
 const d = document;
 
@@ -41,7 +42,7 @@ d.addEventListener("DOMContentLoaded", () => {
 
   darkMode(".darkmode");
 
-  
+  fnBtnScrollTop("myBtn");
 
   /**
    * Una función que llama a loadingElements, mostrarMasArticulos y fetchingArtMostrar.
